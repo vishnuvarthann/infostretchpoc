@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:petfitproject/Utility/constants.dart';
-
-
-
-
 
 class Aboutfragment extends StatefulWidget {
   const Aboutfragment({Key? key}) : super(key: key);
@@ -14,7 +10,6 @@ class Aboutfragment extends StatefulWidget {
 }
 
 TabController? _tabController;
-
 
 class AboutFragmentState extends State<Aboutfragment> {
   @override
@@ -66,13 +61,8 @@ class AboutFragmentState extends State<Aboutfragment> {
                         //TabBarView(children: [ImageList(),])
                         Expanded(
                           child: TabBarView(children: [
-                            Container(
-                              
-                            ),
-                            Container(
-                             
-                              ),
-                            
+                            Container(),
+                            Container(),
                             Container(
                               color: Colors.white,
                               child: const Center(child: Text("Photo details")),

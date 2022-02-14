@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:petfitproject/Utility/constants.dart';
 import 'package:petfitproject/dartclass/aboutfragment.dart';
 import 'package:petfitproject/dartclass/landingfragment.dart';
@@ -7,7 +6,7 @@ import 'package:petfitproject/dartclass/pedlandingscreen.dart';
 import 'package:petfitproject/sideBar/sidebarlist.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-
+// ignore: must_be_immutable
 class NavigationDrawer extends StatefulWidget {
   bool neeAppBar = true;
   final List<String> taptitles = [
@@ -17,7 +16,6 @@ class NavigationDrawer extends StatefulWidget {
   ];
 
   NavigationDrawer({Key? key}) : super(key: key);
-
 
   @override
   _NavigationDrawerState createState() => _NavigationDrawerState();
@@ -52,27 +50,31 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
   @override
   Widget build(BuildContext context) {
     //final taptitle = widget.taptitles[_currentIndex];
-   // title = taptitle;
+    // title = taptitle;
     return Scaffold(
       drawer: Drawer(
         child: SidebarList(
           pickedOption: _pickedOption,
         ),
       ),
-      
-      appBar: widget.neeAppBar ?AppBar(
-        backgroundColor: Colors.black,
-         iconTheme: const IconThemeData(color: Colors.white),
-        title: const Text(BottomNav.title ,style: TextStyle(
-    color: Colors.white,
-  ),),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Icon(Icons.language_outlined),
-          ),
-        ],
-      ):null,
+      appBar: widget.neeAppBar
+          ? AppBar(
+              backgroundColor: Colors.black,
+              iconTheme: const IconThemeData(color: Colors.white),
+              title: const Text(
+                BottomNav.title,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              actions: const [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Icon(Icons.language_outlined),
+                ),
+              ],
+            )
+          : null,
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -87,22 +89,19 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
-
             ),
-            label:BottomNav.trackservic,
-
+            label: BottomNav.trackservic,
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.help,
             ),
-            label:BottomNav.help,
+            label: BottomNav.help,
           ),
         ],
       ),
     );
   }
-
 
   _pickedOption(menu) {
     Navigator.pop(context);
@@ -116,7 +115,8 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
             arguments: {'type': Menu.aboutUs});
         break;
       case Menu.addPet:
-        Navigator.pushNamed(context, '/addpet', arguments: {'type': Menu.addPet});
+        Navigator.pushNamed(context, '/addpet',
+            arguments: {'type': Menu.addPet});
         break;
       case Menu.signOut:
         Navigator.pushNamed(context, '/signOut',
