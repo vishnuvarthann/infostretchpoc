@@ -1,9 +1,12 @@
 class AppException implements Exception {
+  // ignore: prefer_typing_uninitialized_variables
   final _meesage;
+  // ignore: prefer_typing_uninitialized_variables
   final _prefix;
 
   AppException([this._meesage, this._prefix]);
 
+  @override
   String toString() {
     return "$_prefix$_meesage";
   }

@@ -1,19 +1,18 @@
-
 import 'package:path/path.dart';
 import 'package:petfitproject/pojoClass/logindata.dart';
 import 'package:sqflite/sqflite.dart';
 
+//sqlite changes
 class DatabaseHelper {
-
   static const _databaseName = "logindata.db";
   static const _databaseVersion = 1;
   static const table = 'loginuser_details ';
   static const columnId = 'id';
   static const columnName = 'username';
-  static const columnpassword= 'password';
+  static const columnpassword = 'password';
 
   // make this a singleton class
-   DatabaseHelper._privateConstructor();
+  DatabaseHelper._privateConstructor();
   static final DatabaseHelper instance = DatabaseHelper._privateConstructor();
 
   // only have a single app-wide reference to the database
@@ -29,8 +28,7 @@ class DatabaseHelper {
   _initDatabase() async {
     String path = join(await getDatabasesPath(), _databaseName);
     return await openDatabase(path,
-        version: _databaseVersion,
-        onCreate: _onCreate);
+        version: _databaseVersion, onCreate: _onCreate);
   }
 
   // SQL code to create the database table
@@ -51,7 +49,8 @@ class DatabaseHelper {
   // inserted row.
   Future<int> insert(loginData data) async {
     Database? db = await instance.database;
-    return await db!.insert(table, {'username': data.username, 'password': data.password});
+    return await db!
+        .insert(table, {'username': data.username, 'password': data.password});
   }
 
   // All of the rows are returned as a list of maps, where each map is
@@ -71,7 +70,8 @@ class DatabaseHelper {
   // raw SQL commands. This method uses a raw query to give the row count.
   Future<int?> queryRowCount() async {
     Database? db = await instance.database;
-    return Sqflite.firstIntValue(await db!.rawQuery('SELECT COUNT(*) FROM $table'));
+    return Sqflite.firstIntValue(
+        await db!.rawQuery('SELECT COUNT(*) FROM $table'));
   }
 
   // We are assuming here that the id column in the map is set. The other
@@ -79,7 +79,8 @@ class DatabaseHelper {
   Future<int> update(loginData data) async {
     Database? db = await instance.database;
     int id = data.toDatabaseJson()['id'];
-    return await db!.update(table, data.toDatabaseJson(), where: '$columnId = ?', whereArgs: [id]);
+    return await db!.update(table, data.toDatabaseJson(),
+        where: '$columnId = ?', whereArgs: [id]);
   }
 
   // Deletes the row specified by the id. The number of affected rows is
@@ -91,13 +92,13 @@ class DatabaseHelper {
 
   getLogin(String user, String password) async {
     var dbClient = await instance.database;
-    var res = await dbClient!.rawQuery("SELECT * FROM user WHERE username = '$user' and password = '$password'");
+    var res = await dbClient!.rawQuery(
+        "SELECT * FROM user WHERE username = '$user' and password = '$password'");
 
     if (res.isNotEmpty) {
-      return  loginData.fromDatabaseJson(res.first);
+      return loginData.fromDatabaseJson(res.first);
     }
 
     return null;
   }
-
 }
