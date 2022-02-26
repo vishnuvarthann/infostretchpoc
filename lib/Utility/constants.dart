@@ -11,28 +11,29 @@ class BottomNav {
 }
 
 class HOME {
-  static String username ="admin";
-  static String password ="admin@123";
+  static String username = "admin";
+  static String password = "admin@123";
   static String title = "Welcome to PetFit";
   static String loginMessage = "Sign In As:";
   static String loginPetA = "Login As admin";
   static String loginPet = " Login";
   static String detailspage = "Detail Pages";
-  static String feedbackhint="Welcome New User";
-  static String feedbackhints="we would like your feedback to improve our app";
-  static String feedbacklite="How do you feel about the features of the app";
-  static String feedbackints="Please select any feedback category";
-  static String send="Send";
-  static String addPetImage= "Add Pet'sPhoto/Video";
-  static String addPet= "AddPet";
+  static String feedbackhint = "Welcome New User";
+  static String feedbackhints =
+      "we would like your feedback to improve our app";
+  static String feedbacklite = "How do you feel about the features of the app";
+  static String feedbackints = "Please select any feedback category";
+  static String send = "Send";
+  static String addPetImage = "Add Pet'sPhoto/Video";
+  static String addPet = "AddPet";
 }
 
 class NavigationDrawerhint {
   static String faq = "FAQ";
   static String userprofile = "UserProfile";
   static String addPet = "AddPet";
-  static String help ="Help";
-  static String logOut="LogOut";
+  static String help = "Help";
+  static String logOut = "LogOut";
   static String citizen = "Citizen Service";
   static String smogandpollution = "Smog and pollution Complaint";
   static String feedback = "Feedback and Rating";
@@ -54,18 +55,18 @@ class Trackservice {
 }
 
 class LoginString {
+  static String petName = "PetName:";
+  static String petDob = "PetDOB:";
 
- static String petName="PetName:";
- static String petDob="PetDOB:";
- static String PetLocation ="Pet Location:";
- static String petBreed ="Pet Breed";
- static String ownerDetails ="Owner Details:";
- static String album ="Album";
- static String schedule ="Schedule";
- static String create ="Create";
- static String view ="View";
- static String call= "Call";
- static String delete="Delete";
+  static String PetLocation = "Pet Location:";
+  static String petBreed = "Pet Breed";
+  static String ownerDetails = "Owner Details:";
+  static String album = "Album";
+  static String schedule = "Schedule";
+  static String create = "Create";
+  static String view = "View";
+  static String call = "Call";
+  static String delete = "Delete";
 
   static String contantdetails = "Contant Details";
   static String emailAddress = "New User";
@@ -150,4 +151,8 @@ String? validateLocation(String value) {
     return "Desc must be 50 line min";
   }
   return null;
+}
+
+class NetworkConstant {
+  static const int CONST_CONNECTION_TIMEOUT = 3;
 }

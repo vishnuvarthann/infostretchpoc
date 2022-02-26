@@ -5,19 +5,14 @@ import 'package:petfitproject/bloc/loginservicemainbloc.dart';
 import 'package:petfitproject/dartclass/navigationdrawer.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-
-
 class Login extends StatefulWidget {
-
   Login({Key? key}) : super(key: key);
-
 
   @override
   _State createState() => _State();
 }
 
 class _State extends State<Login> {
-
   late LoginServiceMainBloc _bloc;
   bool _isObscure = true;
   final _formKey = GlobalKey<FormState>();
@@ -28,21 +23,18 @@ class _State extends State<Login> {
   late String password;
   bool _rememberMeFlag = false;
 
-  final databaseReference = FirebaseDatabase.instance.reference().child("login");
+  final databaseReference =
+      FirebaseDatabase.instance.reference().child("login");
   // final fb = FirebaseDatabase.instance;
   // final myController = TextEditingController();
   // final name = "Name";
 
   @override
-  void initState() {
-
-  } // @override
+  void initState() {} // @override
   // Future<void> initState() async => _bloc =LoginServiceMainBloc();
-
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.grey,
       key: _scaffoldKey,
@@ -51,7 +43,6 @@ class _State extends State<Login> {
         backgroundColor: Colors.yellow,
       ),
       body: Center(
-
           child: SingleChildScrollView(
               padding: const EdgeInsets.all(20.0),
               child: Column(
@@ -60,8 +51,8 @@ class _State extends State<Login> {
                 children: <Widget>[
                   Container(
                     padding: const EdgeInsets.all(16.0),
-                    child: Image.asset(
-                        'assets/images/petfit.jpg', width: 100, height: 100),
+                    child: Image.asset('assets/images/petfit.jpg',
+                        width: 100, height: 100),
                   ),
                   formSetup(context)
                 ],
@@ -137,7 +128,6 @@ class _State extends State<Login> {
           const Padding(
             padding: EdgeInsets.only(top: 20.0),
           ),
-
           Container(
               height: 50,
               padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -149,22 +139,23 @@ class _State extends State<Login> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
-                    print("Username :" + email + "Password :" + password);
-                    firestoreInstance.collection("login").get().then((querySnapshot) {
+                    //print("Username :" + email + "Password :" + password);
+                    firestoreInstance
+                        .collection("login")
+                        .get()
+                        .then((querySnapshot) {
                       querySnapshot.docs.forEach((result) {
-                      if (email  == "admin" &&  password  == "admin@123"){
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => NavigationDrawer()),
-                        );
-                      }
+                        if (email == "admin" && password == "admin@123") {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NavigationDrawer()),
+                          );
+                        }
                       });
                     });
-
                   }
                 },
-
               )),
           const SizedBox(height: 20),
           Container(
@@ -178,10 +169,8 @@ class _State extends State<Login> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
-
                   }
                 },
-
               )),
           const SizedBox(
             height: 10.0,
@@ -196,22 +185,19 @@ class _State extends State<Login> {
                     children: <Widget>[
                       Checkbox(
                         value: _rememberMeFlag,
-                        onChanged: (value) =>
-                            setState(() {
-                              _rememberMeFlag = !_rememberMeFlag;
-                            }),
+                        onChanged: (value) => setState(() {
+                          _rememberMeFlag = !_rememberMeFlag;
+                        }),
                       ),
                       const Text(
                         "Remember me",
                         style: TextStyle(color: Colors.black, fontSize: 16),
                       ),
-
                     ],
                   ),
-                  onTap: () =>
-                      setState(() {
-                        _rememberMeFlag = !_rememberMeFlag;
-                      }),
+                  onTap: () => setState(() {
+                    _rememberMeFlag = !_rememberMeFlag;
+                  }),
                 ),
               ],
             ),
@@ -221,18 +207,12 @@ class _State extends State<Login> {
     );
   }
 
-
   Widget getTodosWidget() {
     return StreamBuilder<dynamic>(
         stream: _bloc.baseserviceStream,
         builder: (context, snapshot) {
-          if (snapshot.hasData) {
-
-          }
+          if (snapshot.hasData) {}
           return Container();
-        }
-    );
+        });
   }
-
-
 }
