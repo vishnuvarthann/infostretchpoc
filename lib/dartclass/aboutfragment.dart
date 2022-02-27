@@ -74,29 +74,4 @@ class AboutFragmentState extends State<Aboutfragment> {
                   ),
                 ))));
   }
-
-  // Future<bool> _onBackPressed() {
-  //   return showDialog(
-  //         context: context,
-  //         builder: (context) => new AlertDialog(
-  //           title: new Text('Are you sure?'),
-  //           content: new Text('Do you want to exit an App'),
-  //           actions: <Widget>[
-  //             new GestureDetector(
-  //               onTap: () => Navigator.of(context).pop(false),
-  //               child: Text("NO"),
-  //             ),
-  //             SizedBox(height: 16),
-  //             new GestureDetector(
-  //               onTap: () => Navigator.pushAndRemoveUntil(
-  //                   context,
-  //                   MaterialPageRoute(builder: (context) => NavigationDrawer()),
-  //                   ModalRoute.withName("/NavigationDrawer")),
-  //               child: Text("YES"),
-  //             ),
-  //           ],
-  //         ),
-  //       ) ??
-  //       false;
-  // }
 }

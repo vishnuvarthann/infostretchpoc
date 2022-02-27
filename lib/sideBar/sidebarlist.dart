@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:petfitproject/Utility/constants.dart';
 
-
-
 class SidebarList extends StatelessWidget {
   final Function pickedOption;
   const SidebarList({Key? key, required this.pickedOption}) : super(key: key);
@@ -32,19 +30,13 @@ class SidebarList extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            _createOption('User Profile', Icons.download_for_offline_rounded, Menu.userprofile),
+            _createOption('Details Page', Icons.details, Menu.detailpage),
             const Divider(),
             _createOption('Add Pet', Icons.art_track, Menu.addPet),
             const Divider(),
-            _createOption("Help", Icons.help, Menu.signOut),
-            const Divider(),
-            _createOption("Support", Icons.support, Menu.support),
-            const Divider(),
-            _createOption("About", Icons.seventeen_mp, Menu.aboutUs),
-            const Divider(),
             _createOption("FeedBack", Icons.seventeen_mp, Menu.feedback),
             const Divider(),
-            _createOption("Logout", Icons.exit_to_app, Menu.logout),
+            _createOption("Logout", Icons.exit_to_app, Menu.signOut),
             const Divider(),
           ],
         ));
@@ -69,15 +61,6 @@ class SidebarList extends StatelessWidget {
   }
 }
 
-enum Menu {
-  signOut,
-  feedback,
-  aboutUs,
-  userprofile,
-  addPet,
-  support,
-  logout,
-  peddetails
-}
+enum Menu { signOut, feedback, aboutUs, addPet, peddetails, detailpage }
 
 enum Class { feedbackalert }

@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:petfitproject/Utility/constants.dart';
-import 'package:petfitproject/bloc/loginservicemainbloc.dart';
 import 'package:petfitproject/dartclass/navigationdrawer.dart';
 import 'package:firebase_database/firebase_database.dart';
 
@@ -13,7 +12,7 @@ class Login extends StatefulWidget {
 }
 
 class _State extends State<Login> {
-  late LoginServiceMainBloc _bloc;
+  //late LoginServiceMainBloc _bloc;
   bool _isObscure = true;
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -23,15 +22,8 @@ class _State extends State<Login> {
   late String password;
   bool _rememberMeFlag = false;
 
-  final databaseReference =
-      FirebaseDatabase.instance.reference().child("login");
-  // final fb = FirebaseDatabase.instance;
-  // final myController = TextEditingController();
-  // final name = "Name";
-
   @override
-  void initState() {} // @override
-  // Future<void> initState() async => _bloc =LoginServiceMainBloc();
+  void initState() {}
 
   @override
   Widget build(BuildContext context) {
@@ -207,12 +199,14 @@ class _State extends State<Login> {
     );
   }
 
-  Widget getTodosWidget() {
-    return StreamBuilder<dynamic>(
-        stream: _bloc.baseserviceStream,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {}
-          return Container();
-        });
-  }
+//   Widget getTodosWidget() {
+//     return StreamBuilder<dynamic>(
+//         stream: _bloc.baseserviceStream,
+//         builder: (context, snapshot) {
+//           if (snapshot.hasData) {}
+//           return Container();
+//         });
+//   }
+// }
+
 }

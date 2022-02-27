@@ -57,7 +57,7 @@ class APIClient implements IAPIClient {
 
   Future<Response?> _httpGet(String url, {Map<String, String>? headers}) async {
     return await http.get(Uri.parse(url), headers: headers).timeout(
-        const Duration(minutes: NetworkConstant.CONST_CONNECTION_TIMEOUT),
+        const Duration(minutes: NetworkconnectionTime.connectionTimeOut),
         onTimeout: () {
       return throw TimeoutException('Request timeout occurred.');
     });
@@ -68,7 +68,7 @@ class APIClient implements IAPIClient {
     var result = await http
         .post(Uri.parse(url), headers: headers, body: body)
         .timeout(
-            const Duration(minutes: NetworkConstant.CONST_CONNECTION_TIMEOUT),
+            const Duration(minutes: NetworkconnectionTime.connectionTimeOut),
             onTimeout: () {
       return throw TimeoutException('Request timeout occurred.');
     });
@@ -80,7 +80,7 @@ class APIClient implements IAPIClient {
     var result = await http
         .put(Uri.parse(url), headers: headers, body: body)
         .timeout(
-            const Duration(minutes: NetworkConstant.CONST_CONNECTION_TIMEOUT),
+            const Duration(minutes: NetworkconnectionTime.connectionTimeOut),
             onTimeout: () {
       return throw TimeoutException('Request timeout occurred.');
     });
@@ -92,7 +92,7 @@ class APIClient implements IAPIClient {
     var result = await http
         .delete(Uri.parse(url), headers: headers, body: body)
         .timeout(
-            const Duration(minutes: NetworkConstant.CONST_CONNECTION_TIMEOUT),
+            const Duration(minutes: NetworkconnectionTime.connectionTimeOut),
             onTimeout: () {
       return throw TimeoutException('Request timeout occurred.');
     });

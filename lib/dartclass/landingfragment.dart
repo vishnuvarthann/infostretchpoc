@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:petfitproject/Utility/appbutton.dart';
 import 'package:petfitproject/Utility/constants.dart';
 
-
-
 class LandingFragment extends StatefulWidget {
-
   const LandingFragment({Key? key}) : super(key: key);
-
 
   @override
   _LandingFragmentState createState() => _LandingFragmentState();
 }
 
 class _LandingFragmentState extends State<LandingFragment> {
-
   @override
   void initState() {
     super.initState();
@@ -45,7 +39,8 @@ class _LandingFragmentState extends State<LandingFragment> {
                       ),
                       Container(
                         padding: const EdgeInsets.all(16.0),
-                        child: Image.asset('assets/images/petfit.jpg',width:100,height:100),
+                        child: Image.asset('assets/images/petfit.jpg',
+                            width: 100, height: 100),
                       ),
                       AppButton(
                           id: "citizenservice",

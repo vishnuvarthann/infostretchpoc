@@ -1,20 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:petfitproject/Utility/constants.dart';
 
-// class SignOut extends StatelessWidget {
-//   const SignOut({Key? key}) : super(key: key);
-//
-//    @override
-//   Widget build(BuildContext context) {
-//     return  Scaffold(
-//         appBar: AppBar(
-//             title: const Text("SignOut"),
-//             ),
-//         body: const Center(child: Text('SignOut')));
-//   }
-//
-// }
 class PedDetailsView extends StatefulWidget {
   const PedDetailsView({Key? key}) : super(key: key);
 
@@ -27,32 +13,35 @@ class _PedDetailsViewState extends State<PedDetailsView> {
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style =
-    ButtonStyle(
+    final ButtonStyle style = ButtonStyle(
         backgroundColor: MaterialStateProperty.all(Colors.white),
-        padding: MaterialStateProperty.all(const EdgeInsets.fromLTRB(20, 0, 20, 0)),
-        textStyle:
-        MaterialStateProperty.all(const TextStyle(fontSize:25)));
+        padding:
+            MaterialStateProperty.all(const EdgeInsets.fromLTRB(20, 0, 20, 0)),
+        textStyle: MaterialStateProperty.all(const TextStyle(fontSize: 25)));
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Pet Details",style: TextStyle(color: Colors.white)),
-          leading:  IconButton(
-            icon:  const Icon(Icons.arrow_back,color: Colors.white,),
-            onPressed: () =>Navigator.pop(context),
+          title:
+              const Text("Pet Details", style: TextStyle(color: Colors.white)),
+          leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            ),
+            onPressed: () => Navigator.pop(context),
           ),
           backgroundColor: Colors.black54,
         ),
         body: SingleChildScrollView(
             child: Container(
-              height: MediaQuery.of(context).size.height ,
-              width: MediaQuery.of(context).size.width ,
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
           color: Colors.grey,
           alignment: Alignment.center,
           padding: const EdgeInsets.all(20),
           child: Column(children: [
-            Image.asset('assets/images/petfit.jpg', width: 100, height: 100),
-            const SizedBox(height: 40),
+            // Image.asset('assets/images/petfit.jpg', width: 100, height: 100),
+            // const SizedBox(height: 40),
             Row(children: [
               Flexible(
                 flex: 1,
@@ -180,10 +169,9 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                     controller: textarea,
                     keyboardType: TextInputType.multiline,
                     maxLines: 4,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Owner details',
-
                     ),
                   ),
                 )),
@@ -203,7 +191,11 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                 flex: 2,
                 child: Container(
                   alignment: Alignment.centerRight,
-                  child: Image.asset('assets/images/album.jpg',width:40 ,height:40 ,),
+                  child: Image.asset(
+                    'assets/images/album.jpg',
+                    width: 40,
+                    height: 40,
+                  ),
                 ),
               )
             ]),
@@ -223,18 +215,25 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                 flex: 1,
                 child: Container(
                   alignment: Alignment.center,
-                  child: Image.asset('assets/images/calender.jpg',width:40 ,height:40 ,),
+                  child: Image.asset(
+                    'assets/images/calender.jpg',
+                    width: 40,
+                    height: 40,
+                  ),
                 ),
               ),
               Flexible(
                 flex: 1,
                 child: Container(
                   alignment: Alignment.centerRight,
-                  child: Image.asset('assets/images/views.jpg',width:40 ,height:40 ,),
+                  child: Image.asset(
+                    'assets/images/views.jpg',
+                    width: 40,
+                    height: 40,
+                  ),
                 ),
               )
             ]),
-
             Row(children: [
               Flexible(
                 flex: 1,
@@ -257,10 +256,10 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                 flex: 1,
                 child: Container(
                   alignment: Alignment.center,
-                  child:  ElevatedButton(
+                  child: ElevatedButton(
                     style: style,
                     onPressed: () {},
-                    child:  Text(LoginString.call),
+                    child: Text(LoginString.call),
                   ),
                 ),
               ),
@@ -268,10 +267,10 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                 flex: 1,
                 child: Container(
                   alignment: Alignment.center,
-                  child:  ElevatedButton(
+                  child: ElevatedButton(
                     style: style,
                     onPressed: () {},
-                    child:  Text(LoginString.delete),
+                    child: Text(LoginString.delete),
                   ),
                 ),
               )

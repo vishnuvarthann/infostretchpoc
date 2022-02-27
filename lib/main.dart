@@ -1,12 +1,15 @@
 import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:petfitproject/dartclass/GridHeader.dart';
+import 'package:petfitproject/dartclass/peddashboard.dart';
 import 'package:petfitproject/dartclass/addpet.dart';
 import 'package:petfitproject/dartclass/feedback.dart';
 import 'package:petfitproject/dartclass/login.dart';
 import 'package:petfitproject/dartclass/pedlandingscreen.dart';
 import 'package:petfitproject/dartclass/petdetails.dart';
 import 'package:petfitproject/dartclass/peddetailsview.dart';
+import 'package:petfitproject/dartclass/signOut.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,9 +33,11 @@ class MyApp extends StatelessWidget {
         '/login': (context) => Login(),
         '/pedDetailView': (context) => const PedDetailsView(),
         '/feedback': (context) => const FeedBack(),
-        '/pedlandingscreen': (context) => const pedlandingscreen(),
+        '/pedlandingscreen': (context) => const PedDashBoard(),
         '/petdetails': (context) => const petdetails(),
-        '/addpet': (context) => const addpet()
+        '/addpet': (context) => const addpet(),
+        '/detailpage': (context) => GridHeader(),
+        '/sigout': (context) => const Signout()
       },
     );
   }
@@ -66,7 +71,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.yellow,
       body: Center(
-        child: Image.asset('assets/images/animals.jpg'),
+        child: Image.asset('assets/images/splashImages.png'),
       ),
     );
   }

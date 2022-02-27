@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:petfitproject/Utility/constants.dart';
+import 'package:petfitproject/dartclass/peddashboard.dart';
 import 'package:petfitproject/dartclass/aboutfragment.dart';
 import 'package:petfitproject/dartclass/landingfragment.dart';
-import 'package:petfitproject/dartclass/pedlandingscreen.dart';
+
 import 'package:petfitproject/sideBar/sidebarlist.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
@@ -44,7 +45,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
   );
 
   final List<Widget> _children = [
-    const pedlandingscreen(),
+    const PedDashBoard(),
     const Aboutfragment(),
   ];
   @override
@@ -106,9 +107,9 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
   _pickedOption(menu) {
     Navigator.pop(context);
     switch (menu) {
-      case Menu.peddetails:
-        Navigator.pushNamed(context, '/petdetails',
-            arguments: {'type': Menu.aboutUs});
+      case Menu.detailpage:
+        Navigator.pushNamed(context, '/detailpage',
+            arguments: {'type': Menu.detailpage});
         break;
       case Menu.aboutUs:
         Navigator.pushNamed(context, '/signOut',
@@ -119,7 +120,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
             arguments: {'type': Menu.addPet});
         break;
       case Menu.signOut:
-        Navigator.pushNamed(context, '/signOut',
+        Navigator.pushNamed(context, '/sigout',
             arguments: {'type': Menu.signOut});
         break;
       case Menu.feedback:

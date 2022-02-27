@@ -153,6 +153,6 @@ String? validateLocation(String value) {
   return null;
 }
 
-class NetworkConstant {
-  static const int CONST_CONNECTION_TIMEOUT = 3;
+class NetworkconnectionTime {
+  static const int connectionTimeOut = 3;
 }
