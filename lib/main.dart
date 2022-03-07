@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:petfitproject/commonclass/routes.dart';
 import 'package:petfitproject/dartclass/GridHeader.dart';
 import 'package:petfitproject/dartclass/peddashboard.dart';
 import 'package:petfitproject/dartclass/addpet.dart';
@@ -29,15 +30,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.yellow,
       ),
       routes: {
-        // '/Authentication': (context) => const Authentication(),
-        '/login': (context) => Login(),
-        '/pedDetailView': (context) => const PedDetailsView(),
-        '/feedback': (context) => const FeedBack(),
-        '/pedlandingscreen': (context) => const PedDashBoard(),
-        '/petdetails': (context) => const petdetails(),
-        '/addpet': (context) => const addpet(),
-        '/detailpage': (context) => GridHeader(),
-        '/sigout': (context) => const Signout()
+        Routes.login: (context) => const Login(),
+        Routes.pedDetailView: (context) => const PedDetailsView(),
+        Routes.feedback: (context) => const FeedBack(),
+        Routes.pedlandingscreen: (context) => const PedDashBoard(),
+        Routes.petdetails: (context) => const petdetails(),
+        Routes.addpet: (context) => const addpet(),
+        Routes.detailpage: (context) => GridHeader(),
+        Routes.sigout: (context) => const Signout()
       },
     );
   }

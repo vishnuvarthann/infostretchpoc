@@ -3,6 +3,4 @@ class APIResponse<T> {
   String? error;
 
   APIResponse(this.response, this.error);
-
-  bool get isError => response == null;
 }

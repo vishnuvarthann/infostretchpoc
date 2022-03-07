@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:path/path.dart';
-import 'package:petfitproject/dartclass/feedback.dart';
+import 'package:petfitproject/sideBar/sidebarlist.dart';
 
 class Signout extends StatelessWidget {
   const Signout({Key? key}) : super(key: key);
@@ -40,7 +39,10 @@ class Signout extends StatelessWidget {
           'FeedBack',
           style: TextStyle(color: Colors.black87, fontSize: 16),
         ),
-        onPressed: () {});
+        onPressed: () {
+          Navigator.pushNamed(context, '/feedback',
+              arguments: {'type': Menu.feedback});
+        });
     return SafeArea(
         child: Scaffold(
       body: Center(

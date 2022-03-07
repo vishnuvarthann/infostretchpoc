@@ -49,6 +49,7 @@ final List<Widget> imageSliders = imgList
         ))
     .toList();
 
+// ignore: camel_case_types
 class pedlandingscreen extends StatefulWidget {
   const pedlandingscreen({Key? key}) : super(key: key);
 

@@ -16,7 +16,7 @@ class HOME {
   static String title = "Welcome to PetFit";
   static String loginMessage = "Sign In As:";
   static String loginPetA = "Login As admin";
-  static String loginPet = " Login";
+  static String loginPet = " Login ";
   static String detailspage = "Detail Pages";
   static String feedbackhint = "Welcome New User";
   static String feedbackhints =

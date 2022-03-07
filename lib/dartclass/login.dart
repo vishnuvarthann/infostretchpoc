@@ -1,11 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:petfitproject/Utility/constants.dart';
+import 'package:petfitproject/commonclass/colors.dart';
+import 'package:petfitproject/commonclass/dime.dart';
+import 'package:petfitproject/commonclass/fontfamily.dart';
 import 'package:petfitproject/dartclass/navigationdrawer.dart';
-import 'package:firebase_database/firebase_database.dart';
 
 class Login extends StatefulWidget {
-  Login({Key? key}) : super(key: key);
+  const Login({Key? key}) : super(key: key);
 
   @override
   _State createState() => _State();
@@ -28,15 +30,18 @@ class _State extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: AppColors.vbackground,
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text(HOME.loginPet),
+        title: Text(HOME.loginPet,
+            style: const TextStyle(
+                fontFamily: FontFamily.robotoMono,
+                fontWeight: FontWeight.bold)),
         backgroundColor: Colors.yellow,
       ),
       body: Center(
           child: SingleChildScrollView(
-              padding: const EdgeInsets.all(20.0),
+              padding: DimensionValue.edgeValue20,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -156,7 +161,8 @@ class _State extends State<Login> {
               child: ElevatedButton(
                 child: Text(
                   HOME.loginPetA,
-                  style: const TextStyle(fontSize: 16.0, color: Colors.black),
+                  style: const TextStyle(
+                      fontSize: DimensionValue.fontSize16, color: Colors.black),
                 ),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
