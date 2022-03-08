@@ -3,14 +3,15 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:petfitproject/commonclass/routes.dart';
 import 'package:petfitproject/dartclass/GridHeader.dart';
+import 'package:petfitproject/dartclass/ImageLoader.dart';
+import 'package:petfitproject/dartclass/login.dart';
 import 'package:petfitproject/dartclass/peddashboard.dart';
 import 'package:petfitproject/dartclass/addpet.dart';
 import 'package:petfitproject/dartclass/feedback.dart';
-import 'package:petfitproject/dartclass/login.dart';
-import 'package:petfitproject/dartclass/pedlandingscreen.dart';
 import 'package:petfitproject/dartclass/petdetails.dart';
 import 'package:petfitproject/dartclass/peddetailsview.dart';
 import 'package:petfitproject/dartclass/signOut.dart';
+import 'package:petfitproject/ui/screens/medicalapp.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,6 +31,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.yellow,
       ),
       routes: {
+        Routes.imageloader: (context) => const ImageLoader(),
+        Routes.medicalappointment: (context) => const Medicalapp(),
         Routes.login: (context) => const Login(),
         Routes.pedDetailView: (context) => const PedDetailsView(),
         Routes.feedback: (context) => const FeedBack(),

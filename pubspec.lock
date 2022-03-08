@@ -30,7 +30,7 @@ packages:
     source: hosted
     version: "2.8.2"
   bloc:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: bloc
       url: "https://pub.dartlang.org"
@@ -749,6 +749,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  smooth_star_rating_null_safety:
+    dependency: "direct main"
+    description:
+      name: smooth_star_rating_null_safety
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.4+2"
   source_map_stack_trace:
     dependency: transitive
     description:

@@ -41,7 +41,7 @@ dependencies:
   firebase_analytics: ^8.3.4
   firebase_auth: ^3.2.0
   cloud_firestore: ^3.1.0
-  image_picker: ^0.8.4+4
+  image_picker: ^0.8.4+10
   firebase_database: ^8.1.0
   rxdart: ^0.20.0
   logger: ^1.1.0
@@ -60,6 +60,7 @@ dependencies:
   sticky_headers: ^0.2.0
   table_calendar: ^3.0.4
   bloc_concurrency: ^0.2.0
+  smooth_star_rating_null_safety: ^1.0.4+2
 
 dev_dependencies:
   flutter_test:

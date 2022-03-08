@@ -30,6 +30,11 @@ class SidebarList extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
+            _createOption('Appointment', Icons.meeting_room, Menu.appointment),
+            const Divider(),
+            _createOption('Online purchase',
+                Icons.production_quantity_limits_outlined, Menu.onlinepurchase),
+            const Divider(),
             _createOption('Details Page', Icons.details, Menu.detailpage),
             const Divider(),
             _createOption('Add Pet', Icons.art_track, Menu.addPet),
@@ -61,6 +66,15 @@ class SidebarList extends StatelessWidget {
   }
 }
 
-enum Menu { signOut, feedback, aboutUs, addPet, peddetails, detailpage }
+enum Menu {
+  signOut,
+  feedback,
+  aboutUs,
+  addPet,
+  peddetails,
+  detailpage,
+  appointment,
+  onlinepurchase
+}
 
 enum Class { feedbackalert }

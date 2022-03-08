@@ -30,7 +30,7 @@ class _State extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.vbackground,
+      backgroundColor: AppColors.vheaderfont,
       key: _scaffoldKey,
       appBar: AppBar(
         title: Text(HOME.loginPet,

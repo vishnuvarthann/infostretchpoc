@@ -9,8 +9,6 @@ class PedDashBoard extends StatefulWidget {
 }
 
 class _PedDashBoardState extends State<PedDashBoard> {
-  int _currentIndex = 0;
-
   late CarouselSlider carouselSlider;
   final CarouselController _controller = CarouselController();
 
@@ -34,9 +32,7 @@ class _PedDashBoardState extends State<PedDashBoard> {
                   enlargeCenterPage: true,
                   aspectRatio: 2.0,
                   onPageChanged: (index, reason) {
-                    setState(() {
-                      _currentIndex = index;
-                    });
+                    setState(() {});
                   }),
               items: imageList
                   .map(

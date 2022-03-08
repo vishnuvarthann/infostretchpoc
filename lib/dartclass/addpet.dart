@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:petfitproject/Utility/constants.dart';
+import 'package:petfitproject/dartclass/ImageLoader.dart';
 
 class addpet extends StatefulWidget {
   const addpet({Key? key}) : super(key: key);
@@ -230,7 +231,9 @@ class _addpetState extends State<addpet> {
                   alignment: Alignment.center,
                   child: ElevatedButton(
                     style: style,
-                    onPressed: () {},
+                    onPressed: () {
+                      _toggleFavorite(context);
+                    },
                     child: Text(HOME.addPet),
                   ),
                 ),
@@ -238,5 +241,12 @@ class _addpetState extends State<addpet> {
             ]),
           ]),
         )));
+  }
+
+  void _toggleFavorite(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ImageLoader()),
+    );
   }
 }
