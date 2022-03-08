@@ -7,4 +7,6 @@ class Routes {
   static String detailpage = "/detailpage";
   static String sigout = "/sigout";
   static String login = "/login";
+  static String imageloader = '/ImageLoader';
+  static String medicalappointment = '/Medicalapp';
 }

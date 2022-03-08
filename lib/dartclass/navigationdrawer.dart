@@ -107,6 +107,10 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
   _pickedOption(menu) {
     Navigator.pop(context);
     switch (menu) {
+      case Menu.appointment:
+        Navigator.pushNamed(context, '/detailpage',
+            arguments: {'type': Menu.appointment});
+        break;
       case Menu.detailpage:
         Navigator.pushNamed(context, '/detailpage',
             arguments: {'type': Menu.detailpage});
