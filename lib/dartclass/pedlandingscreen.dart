@@ -59,6 +59,7 @@ class pedlandingscreen extends StatefulWidget {
   }
 }
 
+// ignore: camel_case_types
 class _pedlandingscreenState extends State<pedlandingscreen> {
   int _current = 0;
   final CarouselController _controller = CarouselController();
