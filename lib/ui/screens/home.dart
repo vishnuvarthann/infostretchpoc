@@ -39,9 +39,6 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      CircleAvatar(
-                        backgroundImage: NetworkImage("$avatar"),
-                      ),
                     ],
                   ),
                   const SizedBox(height: 9),

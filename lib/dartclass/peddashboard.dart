@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:petfitproject/commonclass/fontfamily.dart';
 
 class PedDashBoard extends StatefulWidget {
   const PedDashBoard({Key? key}) : super(key: key);
@@ -91,18 +92,26 @@ getHomePageBody(BuildContext context) {
       return Card(
         child: ListTile(
           leading: Image(image: AssetImage(images[index])),
-          title: const Text("""PetName:""" +
-              "" +
-              '\n' +
-              "PetAge:" +
-              "" +
-              '\n' +
-              "Petlocation:" +
-              "" +
-              '\n' +
-              "PetBreed:" +
-              "" +
-              '\n'),
+          title: const Text(
+            """PetName:""" +
+                "" +
+                '\n' +
+                "PetAge:" +
+                "" +
+                '\n' +
+                "Petlocation:" +
+                "" +
+                '\n' +
+                "PetBreed:" +
+                "" +
+                '\n',
+            style: TextStyle(
+              fontFamily: FontFamily.robotoMono,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 18.0,
+            ),
+          ),
           onTap: () {
             Navigator.pushNamed(context, "/pedDetailView", arguments: null);
           },

@@ -61,6 +61,8 @@ dependencies:
   table_calendar: ^3.0.4
   bloc_concurrency: ^0.2.0
   smooth_star_rating_null_safety: ^1.0.4+2
+  url_launcher: ^6.0.20
+  flutter_phone_direct_caller: ^2.1.0
 
 dev_dependencies:
   flutter_test:

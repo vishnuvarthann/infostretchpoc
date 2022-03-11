@@ -14,7 +14,6 @@ class Login extends StatefulWidget {
 }
 
 class _State extends State<Login> {
-  //late LoginServiceMainBloc _bloc;
   bool _isObscure = true;
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -155,21 +154,6 @@ class _State extends State<Login> {
                 },
               )),
           const SizedBox(height: 20),
-          Container(
-              height: 50,
-              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-              child: ElevatedButton(
-                child: Text(
-                  HOME.loginPetA,
-                  style: const TextStyle(
-                      fontSize: DimensionValue.fontSize16, color: Colors.black),
-                ),
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    _formKey.currentState!.save();
-                  }
-                },
-              )),
           const SizedBox(
             height: 10.0,
           ),

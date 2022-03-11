@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:petfitproject/Utility/constants.dart';
+import 'package:petfitproject/commonclass/fontfamily.dart';
 
 class SidebarList extends StatelessWidget {
   final Function pickedOption;
@@ -9,7 +10,15 @@ class SidebarList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text(BottomNav.title),
+          title: const Text(
+            BottomNav.title,
+            style: TextStyle(
+              fontFamily: FontFamily.robotoMono,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 18.0,
+            ),
+          ),
           automaticallyImplyLeading: false,
           actions: <Widget>[
             IconButton(
@@ -55,10 +64,10 @@ class SidebarList extends StatelessWidget {
       title: Text(
         title,
         style: const TextStyle(
-          fontStyle: FontStyle.normal,
+          fontFamily: FontFamily.robotoMono,
           color: Colors.black,
           fontWeight: FontWeight.bold,
-          fontSize: 14.0,
+          fontSize: 18.0,
         ),
       ),
       onTap: () => pickedOption(menu),

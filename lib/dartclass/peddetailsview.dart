@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:petfitproject/Utility/constants.dart';
+import 'package:petfitproject/commonclass/appstyle.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PedDetailsView extends StatefulWidget {
   const PedDetailsView({Key? key}) : super(key: key);
@@ -13,12 +16,6 @@ class _PedDetailsViewState extends State<PedDetailsView> {
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style = ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Colors.white),
-        padding:
-            MaterialStateProperty.all(const EdgeInsets.fromLTRB(20, 0, 20, 0)),
-        textStyle: MaterialStateProperty.all(const TextStyle(fontSize: 25)));
-
     return Scaffold(
         appBar: AppBar(
           title:
@@ -47,21 +44,19 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                 flex: 1,
                 child: Container(
                     alignment: Alignment.centerLeft,
-                    child: Text(LoginString.petName,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ))),
+                    child: Text(
+                      LoginString.petName,
+                      style: Styles.headerStyles,
+                    )),
               ),
               Flexible(
                 flex: 2,
                 child: Container(
                   alignment: Alignment.centerLeft,
-                  child: Text(LoginString.petName,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18.0,
-                      )),
+                  child: Text(
+                    LoginString.petName,
+                    style: Styles.headerStyles,
+                  ),
                 ),
               )
             ]),
@@ -71,21 +66,14 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                 flex: 1,
                 child: Container(
                     alignment: Alignment.centerLeft,
-                    child: Text(LoginString.petDob,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ))),
+                    child:
+                        Text(LoginString.petDob, style: Styles.headerStyles)),
               ),
               Flexible(
                 flex: 2,
                 child: Container(
                   alignment: Alignment.centerLeft,
-                  child: Text(LoginString.petDob,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18.0,
-                      )),
+                  child: Text(LoginString.petDob, style: Styles.headerStyles),
                 ),
               )
             ]),
@@ -95,21 +83,19 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                 flex: 1,
                 child: Container(
                     alignment: Alignment.centerLeft,
-                    child: Text(LoginString.PetLocation,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ))),
+                    child: Text(
+                      LoginString.PetLocation,
+                      style: Styles.headerStyles,
+                    )),
               ),
               Flexible(
                 flex: 2,
                 child: Container(
                   alignment: Alignment.centerLeft,
-                  child: Text(LoginString.PetLocation,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18.0,
-                      )),
+                  child: Text(
+                    LoginString.PetLocation,
+                    style: Styles.headerStyles,
+                  ),
                 ),
               )
             ]),
@@ -119,21 +105,19 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                 flex: 1,
                 child: Container(
                     alignment: Alignment.centerLeft,
-                    child: Text(LoginString.petBreed,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ))),
+                    child: Text(
+                      LoginString.petBreed,
+                      style: Styles.headerStyles,
+                    )),
               ),
               Flexible(
                 flex: 2,
                 child: Container(
                   alignment: Alignment.centerLeft,
-                  child: Text(LoginString.petBreed,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18.0,
-                      )),
+                  child: Text(
+                    LoginString.petBreed,
+                    style: Styles.headerStyles,
+                  ),
                 ),
               )
             ]),
@@ -144,11 +128,10 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                   flex: 1,
                   child: Container(
                       alignment: Alignment.centerLeft,
-                      child: Text(LoginString.ownerDetails,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18.0,
-                          ))),
+                      child: Text(
+                        LoginString.ownerDetails,
+                        style: Styles.headerStyles,
+                      )),
                 ),
               ],
             ),
@@ -181,11 +164,10 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                 flex: 1,
                 child: Container(
                     alignment: Alignment.centerLeft,
-                    child: Text(LoginString.album,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ))),
+                    child: Text(
+                      LoginString.album,
+                      style: Styles.headerStyles,
+                    )),
               ),
               Flexible(
                 flex: 2,
@@ -205,11 +187,10 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                 flex: 1,
                 child: Container(
                     alignment: Alignment.centerLeft,
-                    child: Text(LoginString.schedule,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ))),
+                    child: Text(
+                      LoginString.schedule,
+                      style: Styles.headerStyles,
+                    )),
               ),
               Flexible(
                 flex: 1,
@@ -257,8 +238,10 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                 child: Container(
                   alignment: Alignment.center,
                   child: ElevatedButton(
-                    style: style,
-                    onPressed: () {},
+                    style: Styles.style,
+                    onPressed: () {
+                      _launchCaller(context);
+                    },
                     child: Text(LoginString.call),
                   ),
                 ),
@@ -268,7 +251,7 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                 child: Container(
                   alignment: Alignment.center,
                   child: ElevatedButton(
-                    style: style,
+                    style: Styles.style,
                     onPressed: () {},
                     child: Text(LoginString.delete),
                   ),
@@ -277,5 +260,10 @@ class _PedDetailsViewState extends State<PedDetailsView> {
             ]),
           ]),
         )));
+  }
+
+  _launchCaller(BuildContext context) async {
+    const number = '08592119XXXX'; //set the number here
+    bool? res = await FlutterPhoneDirectCaller.callNumber(number);
   }
 }

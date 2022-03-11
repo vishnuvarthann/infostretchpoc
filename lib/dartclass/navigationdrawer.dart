@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:petfitproject/Utility/constants.dart';
+import 'package:petfitproject/commonclass/fontfamily.dart';
 import 'package:petfitproject/dartclass/peddashboard.dart';
 import 'package:petfitproject/dartclass/aboutfragment.dart';
 import 'package:petfitproject/dartclass/landingfragment.dart';
@@ -65,8 +66,14 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               title: const Text(
                 BottomNav.title,
                 style: TextStyle(
+                  fontFamily: FontFamily.robotoMono,
                   color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
                 ),
+                // style: TextStyle(
+                //   color: Colors.white,
+                // ),
               ),
               actions: const [
                 Padding(
@@ -108,7 +115,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
     Navigator.pop(context);
     switch (menu) {
       case Menu.appointment:
-        Navigator.pushNamed(context, '/detailpage',
+        Navigator.pushNamed(context, '/Medicalapp',
             arguments: {'type': Menu.appointment});
         break;
       case Menu.detailpage:
