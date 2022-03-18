@@ -98,25 +98,5 @@ class _LandingFragmentState extends State<LandingFragment> {
 
   _serviceCall(id) {}
 
-  // Future<bool> _onBackPressed() {
-  //   return showDialog(
-  //         context: context,
-  //         builder: (context) => new AlertDialog(
-  //           title: new Text('Are you sure?'),
-  //           content: new Text('Do you want to exit an App'),
-  //           actions: <Widget>[
-  //             new GestureDetector(
-  //               onTap: () => Navigator.of(context).pop(false),
-  //               child: Text("NO"),
-  //             ),
-  //             SizedBox(height: 16),
-  //             new GestureDetector(
-  //               onTap: () => Navigator.of(context).pop(true),
-  //               child: Text("YES"),
-  //             ),
-  //           ],
-  //         ),
-  //       ) ??
-  //       false;
-  // }
+ 
 }

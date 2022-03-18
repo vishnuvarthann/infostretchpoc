@@ -5,13 +5,20 @@ class Styles {
   static const TextStyle headerStyles = TextStyle(
     fontFamily: FontFamily.robotoMono,
     color: Colors.black,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w500,
     fontSize: 18.0,
+    
+  );
+  static const TextStyle boldStyles = TextStyle(
+    fontFamily: FontFamily.robotoMono,
+    color: Colors.black,
+    fontWeight: FontWeight.w500,
+    fontSize: 20.0,
   );
 
   static const TextStyle buttonStyles = TextStyle(
     fontFamily: FontFamily.robotoMono,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.w500,
     fontSize: 16,
     color: Colors.white,
   );

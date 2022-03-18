@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petfitproject/commonclass/appstyle.dart';
 import 'package:petfitproject/ui/screens/details.dart';
 import 'package:petfitproject/ui/widgets/doctor_container.dart';
 
@@ -35,7 +36,10 @@ class HomeScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: const <Widget>[
-                            Text("Cybdom"),
+                            Text(
+                              "PedFit Appointment",
+                              style: Styles.headerStyles,
+                            ),
                           ],
                         ),
                       ),
@@ -86,19 +90,16 @@ class HomeScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  const Text(
-                                    "Do you have symptoms of Covid-19?",
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold),
-                                  ),
+                                  const Text("At Pet Doctor, Avilable all Time",
+                                      style: Styles.headerStyles),
                                   RaisedButton(
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(25.0),
                                     ),
                                     color: MyColors.blue,
-                                    child: Text(
+                                    child: const Text(
                                       "Contact A Doctor",
-                                      style: Theme.of(context).textTheme.button,
+                                      style: Styles.buttonStyles,
                                     ),
                                     onPressed: () => Navigator.push(
                                       context,
@@ -117,42 +118,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 9),
-                  const Text("Categories"),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 9.0),
-                    height: 71,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: List.generate(
-                        categories.length,
-                        (f) => Container(
-                          constraints: BoxConstraints(
-                              maxWidth: MediaQuery.of(context).size.width / 2),
-                          margin: const EdgeInsets.symmetric(horizontal: 9.0),
-                          padding: const EdgeInsets.all(9.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(color: MyColors.grey),
-                            borderRadius: BorderRadius.circular(9.0),
-                          ),
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                padding: const EdgeInsets.all(5.0),
-                                decoration: BoxDecoration(
-                                  color: categories[f]['color'],
-                                  borderRadius: BorderRadius.circular(9.0),
-                                ),
-                                child: Image.asset("${categories[f]['icon']}"),
-                              ),
-                              const SizedBox(width: 5),
-                              Flexible(
-                                child: Text("${categories[f]['title']}"),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
+                  const Text(
+                    "List of avilable Doctors",
+                    style: Styles.headerStyles,
                   ),
                 ],
               ),
@@ -162,7 +130,7 @@ class HomeScreen extends StatelessWidget {
               decoration: const BoxDecoration(
                 color: MyColors.grey,
                 borderRadius: BorderRadius.only(
-                  topLeft: const Radius.circular(15.0),
+                  topLeft: Radius.circular(15.0),
                   topRight: Radius.circular(15.0),
                 ),
               ),
@@ -171,9 +139,15 @@ class HomeScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      const Text("Top Doctors"),
+                      const Text(
+                        "Top Doctors",
+                        style: Styles.headerStyles,
+                      ),
                       FlatButton(
-                        child: const Text("See All"),
+                        child: const Text(
+                          "See All",
+                          style: Styles.headerStyles,
+                        ),
                         onPressed: () {},
                       )
                     ],

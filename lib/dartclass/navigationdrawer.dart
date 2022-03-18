@@ -51,8 +51,6 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
   ];
   @override
   Widget build(BuildContext context) {
-    //final taptitle = widget.taptitles[_currentIndex];
-    // title = taptitle;
     return Scaffold(
       drawer: Drawer(
         child: SidebarList(
@@ -115,7 +113,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
     Navigator.pop(context);
     switch (menu) {
       case Menu.appointment:
-        Navigator.pushNamed(context, '/Medicalapp',
+        Navigator.pushNamed(context, '/OnBoardingScreen',
             arguments: {'type': Menu.appointment});
         break;
       case Menu.detailpage:

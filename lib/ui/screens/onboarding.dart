@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:petfitproject/commonclass/appstyle.dart';
 import 'package:petfitproject/ui/global.dart';
+import 'package:petfitproject/ui/screens/medicalapp.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   final _pageController = PageController();
@@ -17,9 +19,14 @@ class OnBoardingScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: FlatButton(
-                  child: const Text("Skip"),
-                  onPressed: () =>
-                      Navigator.pushReplacementNamed(context, 'home'),
+                  child: const Text(
+                    "Skip",
+                    style: Styles.headerStyles,
+                  ),
+                  onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Medicalapp())),
                 ),
               ),
               Expanded(
@@ -55,11 +62,13 @@ class OnBoardingScreen extends StatelessWidget {
                       Text(
                         "${onBoardingInstructions[i].title}",
                         textAlign: TextAlign.center,
+                        style: Styles.headerStyles,
                       ),
                       const SizedBox(height: 5.0),
                       Text(
                         "${onBoardingInstructions[i].subtitle}",
                         textAlign: TextAlign.center,
+                        style: Styles.boldStyles,
                       )
                     ],
                   ),
@@ -72,18 +81,15 @@ class OnBoardingScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(25.0),
                   ),
                   color: MyColors.blue,
-                  child: Text(
+                  child: const Text(
                     "Next",
-                    style: Theme.of(context).textTheme.button,
+                    style: Styles.headerStyles,
                   ),
                   onPressed: () {
-                    if (onBoardingInstructions.length - 1 ==
-                        _pageController.page) {
-                      Navigator.pushReplacementNamed(context, 'home');
-                    } else
-                      _pageController.nextPage(
-                          duration: const Duration(milliseconds: 250),
-                          curve: Curves.easeIn);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Medicalapp()));
                   },
                 ),
               )

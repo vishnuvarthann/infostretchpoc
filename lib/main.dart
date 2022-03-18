@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:petfitproject/commonclass/routes.dart';
 import 'package:petfitproject/dartclass/GridHeader.dart';
 import 'package:petfitproject/dartclass/ImageLoader.dart';
+import 'package:petfitproject/dartclass/data.dart';
 import 'package:petfitproject/dartclass/login.dart';
 import 'package:petfitproject/dartclass/peddashboard.dart';
 import 'package:petfitproject/dartclass/addpet.dart';
@@ -12,6 +13,8 @@ import 'package:petfitproject/dartclass/petdetails.dart';
 import 'package:petfitproject/dartclass/peddetailsview.dart';
 import 'package:petfitproject/dartclass/signOut.dart';
 import 'package:petfitproject/ui/screens/medicalapp.dart';
+import 'package:petfitproject/ui/screens/onboarding.dart';
+import 'package:petfitproject/ui/widgets/doctorProfile.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,12 +34,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.yellow,
       ),
       routes: {
+        Routes.doctorProfile: (context) => const DoctorProfile(),
+        Routes.onBoardingScreen: (context) => OnBoardingScreen(),
         Routes.imageloader: (context) => const ImageLoader(),
         Routes.medicalappointment: (context) => const Medicalapp(),
         Routes.login: (context) => const Login(),
-        Routes.pedDetailView: (context) => const PedDetailsView(),
+        Routes.pedDetailView: (context) => PedDetailsView(),
         Routes.feedback: (context) => const FeedBack(),
         Routes.pedlandingscreen: (context) => const PedDashBoard(),
+        // Routes.pedlandingscreen: (context) => const AddData(),
         Routes.petdetails: (context) => const petdetails(),
         Routes.addpet: (context) => const addpet(),
         Routes.detailpage: (context) => GridHeader(),

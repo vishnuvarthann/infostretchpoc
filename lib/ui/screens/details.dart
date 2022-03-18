@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:petfitproject/ui/global.dart';
+import 'package:petfitproject/ui/widgets/bookingscreen.dart';
 import 'package:smooth_star_rating_null_safety/smooth_star_rating_null_safety.dart';
 
 class DetailsScreen extends StatefulWidget {
@@ -235,7 +236,13 @@ class _DetailsScreenState extends State<DetailsScreen> {
                               "Make An Appointement",
                               style: Theme.of(context).textTheme.button,
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const BookingScreen()));
+                            },
                           ),
                         ),
                       ],

@@ -29,7 +29,7 @@ class DoctorContainer extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(9.0),
                 child: Image.network(
-                  "${doctorInfo[id].image}",
+                  doctorInfo[id].image,
                 ),
               ),
             ),
@@ -39,7 +39,7 @@ class DoctorContainer extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    "${doctorInfo[id].name}",
+                    doctorInfo[id].name,
                   ),
                   Text(
                     "${doctorInfo[id].type}",

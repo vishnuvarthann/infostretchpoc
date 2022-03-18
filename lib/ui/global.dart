@@ -45,39 +45,10 @@ List<DoctorInfo> doctorInfo = [
   DoctorInfo(
     image:
         "https://image.freepik.com/vecteurs-libre/contexte-du-docteur_1270-84.jpg",
-    about:
-        "Incidunt placeat eos magni quas quam in dignissimos. Asperiores porro distinctio nemo excepturi labore?",
+    about: "Let them fall into the great ones, which they are most worthy of?",
     certifications: "10",
     experience: "15",
-    name: "Dr Cybdom Tech",
-    patientsCount: "385",
-    reviewCount: "1320",
-    reviews: 4.3,
-    type: "General Practitioner",
-    workingHours: "Mon - Fri 09:00 - 17:00",
-  ),
-  DoctorInfo(
-    image:
-        "https://image.freepik.com/vecteurs-libre/contexte-du-docteur_1270-84.jpg",
-    about:
-        "Incidunt placeat eos magni quas quam in dignissimos. Asperiores porro distinctio nemo excepturi labore?",
-    certifications: "10",
-    experience: "15",
-    name: "Dr Cybdom Tech",
-    patientsCount: "385",
-    reviewCount: "1320",
-    reviews: 4.3,
-    type: "General Practitioner",
-    workingHours: "Mon - Fri 09:00 - 17:00",
-  ),
-  DoctorInfo(
-    image:
-        "https://image.freepik.com/vecteurs-libre/contexte-du-docteur_1270-84.jpg",
-    about:
-        "Incidunt placeat eos magni quas quam in dignissimos. Asperiores porro distinctio nemo excepturi labore?",
-    certifications: "10",
-    experience: "15",
-    name: "Dr Cybdom Tech",
+    name: "Dr Ramesh",
     patientsCount: "385",
     reviewCount: "1320",
     reviews: 4.3,
@@ -86,16 +57,17 @@ List<DoctorInfo> doctorInfo = [
   ),
 ];
 
+
 List<OnBoardingInstructions> onBoardingInstructions = [
   OnBoardingInstructions(
     "assets/images/onboarding2.png",
     "Call a doctor to visit you",
-    "Incidunt placeat eos magni quas quam in dignissimos. Asperiores porro distinctio nemo excepturi labore?",
+    "Let them fall into the great ones, which they are most worthy of?",
   ),
   OnBoardingInstructions(
     "assets/images/onboarding3.png",
     "Call a doctor to visit you",
-    "Incidunt placeat eos magni quas quam in dignissimos. Asperiores porro distinctio nemo excepturi labore?",
+    "Let them fall into the great ones, which they are most worthy of?",
   ),
 ];
 

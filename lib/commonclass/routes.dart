@@ -9,4 +9,6 @@ class Routes {
   static String login = "/login";
   static String imageloader = '/ImageLoader';
   static String medicalappointment = '/Medicalapp';
+  static String onBoardingScreen = "/OnBoardingScreen";
+  static String doctorProfile = "/DoctorProfile";
 }

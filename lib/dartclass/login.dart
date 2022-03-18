@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:petfitproject/Utility/constants.dart';
+import 'package:petfitproject/commonclass/appstyle.dart';
 import 'package:petfitproject/commonclass/colors.dart';
 import 'package:petfitproject/commonclass/dime.dart';
 import 'package:petfitproject/commonclass/fontfamily.dart';
@@ -65,6 +66,7 @@ class _State extends State<Login> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           TextFormField(
+            style: Styles.headerStyles,
             controller: _emailAddress,
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.email),
@@ -93,6 +95,7 @@ class _State extends State<Login> {
           ),
           const SizedBox(height: 20),
           TextFormField(
+            style: Styles.headerStyles,
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.person),
               suffixIcon: IconButton(
@@ -135,7 +138,6 @@ class _State extends State<Login> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
-                    //print("Username :" + email + "Password :" + password);
                     firestoreInstance
                         .collection("login")
                         .get()

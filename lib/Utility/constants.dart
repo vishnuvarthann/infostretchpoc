@@ -56,9 +56,10 @@ class Trackservice {
 
 class LoginString {
   static String petName = "PetName:";
-  static String petDob = "PetDOB:";
+  static String petDob = "petAge:";
   static String PetLocation = "Pet Location:";
   static String petBreed = "Pet Breed";
+  static String ownerContact = "PedID:";
   static String ownerDetails = "Owner Details:";
   static String album = "Album";
   static String schedule = "Schedule";
