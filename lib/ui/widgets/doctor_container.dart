@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
+import 'package:petfitproject/commonclass/appstyle.dart';
 import 'package:petfitproject/ui/global.dart';
 import 'package:petfitproject/ui/screens/details.dart';
 import 'package:smooth_star_rating_null_safety/smooth_star_rating_null_safety.dart';
@@ -40,10 +42,11 @@ class DoctorContainer extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     doctorInfo[id].name,
+                    style: Styles.headerStyles,
                   ),
                   Text(
                     "${doctorInfo[id].type}",
-                    style: const TextStyle(color: Colors.grey),
+                    style: Styles.headerStyles,
                   ),
                   Row(
                     children: <Widget>[
@@ -54,7 +57,10 @@ class DoctorContainer extends StatelessWidget {
                           color: MyColors.orange,
                         ),
                       ),
-                      Text("(${doctorInfo[id].reviewCount})"),
+                      Text(
+                        "(${doctorInfo[id].reviewCount})",
+                        style: Styles.headerStyles,
+                      ),
                     ],
                   )
                 ],
@@ -69,7 +75,7 @@ class DoctorContainer extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.all(3.0),
                     decoration: BoxDecoration(
-                      border: Border.all(color: MyColors.grey),
+                      border: Border.all(color: Colors.green),
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     child: const Icon(Icons.bookmark_border),
@@ -80,14 +86,12 @@ class DoctorContainer extends StatelessWidget {
                   onTap: () {},
                   child: Container(
                     padding: const EdgeInsets.all(9.0),
-                    child: Text(
+                    child: const Text(
                       "Open",
-                      style: Theme.of(context)
-                          .textTheme
-                          .button!
-                          .copyWith(color: MyColors.darkGreen),
+                      style: Styles.buttonStyles,
                     ),
                     decoration: BoxDecoration(
+                      border: Border.all(color: Colors.yellow),
                       borderRadius: BorderRadius.circular(5.0),
                       color: const Color(0xffdbf3e8),
                     ),

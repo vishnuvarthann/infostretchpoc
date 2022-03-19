@@ -11,4 +11,5 @@ class Routes {
   static String medicalappointment = '/Medicalapp';
   static String onBoardingScreen = "/OnBoardingScreen";
   static String doctorProfile = "/DoctorProfile";
+  static String bloc_base = "/bloc_base";
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petfitproject/Utility/constants.dart';
 import 'package:petfitproject/commonclass/appstyle.dart';
 import 'package:petfitproject/ui/screens/details.dart';
 import 'package:petfitproject/ui/widgets/doctor_container.dart';
@@ -17,7 +18,7 @@ class HomeScreen extends StatelessWidget {
           elevation: 0,
           leading: IconButton(
             icon: const Icon(
-              Icons.menu,
+              Icons.arrow_back,
               color: Colors.black54,
             ),
             onPressed: () {},
@@ -46,18 +47,18 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 9),
-                  TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: const Icon(Icons.search),
-                      hintText: "Search",
-                      filled: true,
-                      fillColor: MyColors.grey,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
-                  ),
+                  // TextField(
+                  //   decoration: InputDecoration(
+                  //     prefixIcon: const Icon(Icons.search),
+                  //     hintText: "Search",
+                  //     filled: true,
+                  //     fillColor: MyColors.grey,
+                  //     border: OutlineInputBorder(
+                  //       borderRadius: BorderRadius.circular(5.0),
+                  //       borderSide: BorderSide.none,
+                  //     ),
+                  //   ),
+                  // ),
                   const SizedBox(height: 9),
                   SizedBox(
                     height: MediaQuery.of(context).size.height / 4,

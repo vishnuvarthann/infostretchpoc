@@ -1,6 +1,10 @@
 import 'dart:async';
+import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:petfitproject/bloc_cubit/bloc_base.dart';
+import 'package:petfitproject/bloc_cubit/bloc_observer.dart';
+import 'package:petfitproject/bloc_cubit/newsheaderview.dart';
 import 'package:petfitproject/commonclass/routes.dart';
 import 'package:petfitproject/dartclass/GridHeader.dart';
 import 'package:petfitproject/dartclass/ImageLoader.dart';
@@ -18,7 +22,8 @@ import 'package:petfitproject/ui/widgets/doctorProfile.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const MyApp());
+  BlocOverrides.runZoned(() => runApp(const MyApp()),
+      blocObserver: TodoBlocObserver());
 }
 
 class MyApp extends StatelessWidget {
@@ -45,7 +50,8 @@ class MyApp extends StatelessWidget {
         Routes.petdetails: (context) => const petdetails(),
         Routes.addpet: (context) => const addpet(),
         Routes.detailpage: (context) => GridHeader(),
-        Routes.sigout: (context) => const Signout()
+        Routes.sigout: (context) => const Signout(),
+        Routes.bloc_base: (context) => const bloc_base()
       },
     );
   }

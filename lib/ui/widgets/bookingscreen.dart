@@ -2,10 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:intl/intl.dart';
 import 'package:petfitproject/commonclass/appstyle.dart';
-import 'package:petfitproject/ui/screens/home.dart';
+
 import 'package:petfitproject/ui/widgets/doctorProfile.dart';
 
 class BookingScreen extends StatefulWidget {
@@ -37,7 +36,7 @@ class _BookingScreenState extends State<BookingScreen> {
   late String dateUTC;
   late String date_Time;
 
-  FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   late User user;
 
   Future<void> _getUser() async {
@@ -105,12 +104,11 @@ class _BookingScreenState extends State<BookingScreen> {
     AlertDialog alert = AlertDialog(
       title: const Text(
         "Done!",
-        // style: GoogleFonts.lato(
-        //   fontWeight: FontWeight.bold,
-        // ),
+        style: Styles.headerStyles,
       ),
       content: const Text(
         "Appointment is registered.",
+        style: Styles.headerStyles,
         //   style: GoogleFonts.lato(),
         // ),
       ),
@@ -146,11 +144,6 @@ class _BookingScreenState extends State<BookingScreen> {
         elevation: 0,
         title: const Text(
           'Appointment booking',
-          // style: GoogleFonts.lato(
-          //   color: Colors.black,
-          //   fontSize: 20,
-          //   fontWeight: FontWeight.bold,
-          // ),
         ),
         iconTheme: const IconThemeData(
           color: Colors.black,
@@ -184,11 +177,7 @@ class _BookingScreenState extends State<BookingScreen> {
                         padding: const EdgeInsets.only(left: 16),
                         child: const Text(
                           'Enter Patient Details',
-                          // style: GoogleFonts.lato(
-                          //   fontSize: 18,
-                          //   fontWeight: FontWeight.bold,
-                          //   color: Colors.black54,
-                          // ),
+                          style: Styles.headerStyles,
                         ),
                       ),
                       const SizedBox(
@@ -208,17 +197,17 @@ class _BookingScreenState extends State<BookingScreen> {
                               left: 20, top: 10, bottom: 10),
                           border: const OutlineInputBorder(
                             borderRadius:
-                                const BorderRadius.all(Radius.circular(90.0)),
+                                BorderRadius.all(Radius.circular(90.0)),
                             borderSide: BorderSide.none,
                           ),
                           filled: true,
                           fillColor: Colors.grey[350],
                           hintText: 'Patient Name*',
-                          // hintStyle: GoogleFonts.lato(
-                          //   color: Colors.black26,
-                          //   fontSize: 18,
-                          //   fontWeight: FontWeight.w800,
-                          // ),
+                          hintStyle: GoogleFonts.lato(
+                            color: Colors.black26,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
+                          ),
                         ),
                         onFieldSubmitted: (String value) {
                           f1.unfocus();
@@ -246,11 +235,11 @@ class _BookingScreenState extends State<BookingScreen> {
                           filled: true,
                           fillColor: Colors.grey[350],
                           hintText: 'Mobile*',
-                          // hintStyle: GoogleFonts.lato(
-                          //   color: Colors.black26,
-                          //   fontSize: 18,
-                          //   fontWeight: FontWeight.w800,
-                          // ),
+                          hintStyle: GoogleFonts.lato(
+                            color: Colors.black26,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
+                          ),
                         ),
                         // validator: (value) {
                         //   if (value.isEmpty) {
@@ -285,13 +274,13 @@ class _BookingScreenState extends State<BookingScreen> {
                             borderSide: BorderSide.none,
                           ),
                           filled: true,
-                          fillColor: Colors.grey[350],
-                          hintText: 'Description',
-                          // hintStyle: GoogleFonts.lato(
-                          //   color: Colors.black26,
-                          //   fontSize: 18,
-                          //   fontWeight: FontWeight.w800,
-                          // ),
+                          fillColor: Colors.amberAccent[350],
+                          hintText: 'vaccinations details',
+                          hintStyle: GoogleFonts.lato(
+                            color: Colors.black26,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
+                          ),
                         ),
                         onFieldSubmitted: (String value) {
                           f3.unfocus();
@@ -322,11 +311,11 @@ class _BookingScreenState extends State<BookingScreen> {
                               filled: true,
                               fillColor: Colors.grey[350],
                               hintText: 'Doctor Name*',
-                              // hintStyle: GoogleFonts.lato(
-                              //   color: Colors.black26,
-                              //   fontSize: 18,
-                              //   fontWeight: FontWeight.w800,
-                              // ),
+                              hintStyle: GoogleFonts.lato(
+                                color: Colors.black26,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w800,
+                              ),
                             );
                           }),
                       const SizedBox(
@@ -353,7 +342,7 @@ class _BookingScreenState extends State<BookingScreen> {
                                   borderSide: BorderSide.none,
                                 ),
                                 filled: true,
-                                fillColor: Colors.grey[350],
+                                fillColor: Colors.amberAccent[350],
                                 hintText: 'Select Date*',
                                 hintStyle: GoogleFonts.lato(
                                   color: Colors.black26,
@@ -424,7 +413,7 @@ class _BookingScreenState extends State<BookingScreen> {
                                   borderSide: BorderSide.none,
                                 ),
                                 filled: true,
-                                fillColor: Colors.grey[350],
+                                fillColor: Colors.amberAccent[350],
                                 hintText: 'Select Time*',
                                 hintStyle: GoogleFonts.lato(
                                   color: Colors.black26,
@@ -480,7 +469,7 @@ class _BookingScreenState extends State<BookingScreen> {
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             elevation: 2,
-                            primary: Colors.indigo,
+                            primary: Colors.yellow,
                             onPrimary: Colors.black,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(32.0),
@@ -491,15 +480,16 @@ class _BookingScreenState extends State<BookingScreen> {
                               print(_nameController.text);
                               print(_dateController.text);
                               print("widget.doctor");
-                              showAlertDialog(context);
+
                               _createAppointment();
+                              //showAlertDialog(context);
                             }
                           },
                           child: Text(
                             "Book Appointment",
                             style: GoogleFonts.lato(
                               color: Colors.white,
-                              fontSize: 18,
+                              fontSize: 22,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -521,30 +511,13 @@ class _BookingScreenState extends State<BookingScreen> {
 
   Future<void> _createAppointment() async {
     print(dateUTC + ' ' + date_Time + ':00');
-    FirebaseFirestore.instance
-        .collection('appointments')
-        .doc(user.email)
-        .collection('pending')
-        .doc()
-        .set({
+    FirebaseFirestore.instance.collection('appointments details').doc().set({
       'name': _nameController.text,
       'phone': _phoneController.text,
       'description': _descriptionController.text,
       'doctor': _doctorController.text,
       'date': DateTime.parse(dateUTC + ' ' + date_Time + ':00'),
     }, SetOptions(merge: true));
-
-    FirebaseFirestore.instance
-        .collection('appointments')
-        .doc(user.email)
-        .collection('all')
-        .doc()
-        .set({
-      'name': _nameController.text,
-      'phone': _phoneController.text,
-      'description': _descriptionController.text,
-      'doctor': _doctorController.text,
-      'date': DateTime.parse(dateUTC + ' ' + date_Time + ':00'),
-    }, SetOptions(merge: true));
+    showAlertDialog(context);
   }
 }

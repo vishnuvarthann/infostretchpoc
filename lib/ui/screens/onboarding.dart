@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:petfitproject/Utility/appbutton.dart';
+import 'package:petfitproject/Utility/constants.dart';
 import 'package:petfitproject/commonclass/appstyle.dart';
 import 'package:petfitproject/ui/global.dart';
 import 'package:petfitproject/ui/screens/medicalapp.dart';
@@ -9,6 +11,7 @@ class OnBoardingScreen extends StatelessWidget {
   OnBoardingScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -76,27 +79,24 @@ class OnBoardingScreen extends StatelessWidget {
               ),
               SizedBox(
                 width: double.infinity,
-                child: RaisedButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25.0),
-                  ),
-                  color: MyColors.blue,
-                  child: const Text(
-                    "Next",
-                    style: Styles.headerStyles,
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Medicalapp()));
-                  },
-                ),
-              )
+                child: AppButton(
+                    color: Colors.yellow,
+                    id: "citizenservice",
+                    width: size.width * 0.7,
+                    height: size.height * 0.08,
+                    onPressed: (route, count, id) =>
+                        _clicked(route, context, id),
+                    route: '/Medicalapp',
+                    title: HOME.loginPetA),
+              ),
             ],
           ),
         ),
       ),
     );
   }
+}
+
+_clicked(route, context, id) async {
+  Navigator.pushNamed(context, route, arguments: id);
 }

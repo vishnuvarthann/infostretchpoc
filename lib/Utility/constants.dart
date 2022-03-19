@@ -15,7 +15,8 @@ class HOME {
   static String password = "admin@123";
   static String title = "Welcome to PetFit";
   static String loginMessage = "Sign In As:";
-  static String loginPetA = "Login As admin";
+  static String loginPetA = "Fix Appointmnet ";
+  static String appointhistorty = "AppointmentHostory";
   static String loginPet = " Login ";
   static String detailspage = "Detail Pages";
   static String feedbackhint = "Welcome New User";

@@ -92,11 +92,6 @@ class _LandingFragmentState extends State<LandingFragment> {
   }
 
   _clicked(route, context, id) async {
-    _serviceCall(id);
     Navigator.pushNamed(context, route, arguments: id);
   }
-
-  _serviceCall(id) {}
-
- 
 }

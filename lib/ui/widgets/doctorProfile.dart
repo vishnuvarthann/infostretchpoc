@@ -11,11 +11,14 @@ class DoctorProfile extends StatefulWidget {
 }
 
 class _DoctorProfileState extends State<DoctorProfile> {
-  _launchCaller(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+  // ignore: non_constant_identifier_names
+  String? Url = "";
+  _launchCaller(Url) async {
+    assert(Url != null);
+    if (await canLaunch(Url)) {
+      await launch(Url);
     } else {
-      throw 'Could not launch $url';
+      throw 'Could not launch $Url';
     }
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petfitproject/commonclass/appstyle.dart';
 import 'package:petfitproject/ui/global.dart';
 import 'package:petfitproject/ui/widgets/bookingscreen.dart';
 import 'package:smooth_star_rating_null_safety/smooth_star_rating_null_safety.dart';
@@ -81,10 +82,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                 children: <Widget>[
                                   Text(
                                     "${doctorInfo[widget.id].name}",
+                                    style: Styles.headerStyles,
                                   ),
                                   Text(
                                     "${doctorInfo[widget.id].type}",
-                                    style: const TextStyle(color: Colors.grey),
+                                    style: Styles.headerStyles,
                                   ),
                                 ],
                               ),
@@ -122,16 +124,16 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           children: <Widget>[
                             SmoothStarRating(
                               rating: doctorInfo[widget.id].reviews,
-                              size: 15,
+                              size: 25,
                               color: MyColors.orange,
                             ),
-                            Text("(${doctorInfo[0].reviewCount} Reviews)"),
+                            Text("(${doctorInfo[0].reviewCount} Reviews)",
+                                style: Styles.headerStyles),
                             Expanded(
                               child: FlatButton(
                                 child: const FittedBox(
-                                  child: Text(
-                                    "See all reviews",
-                                  ),
+                                  child: Text("See all reviews",
+                                      style: Styles.headerStyles),
                                 ),
                                 onPressed: () {},
                               ),
@@ -140,17 +142,20 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         ),
                         const Text(
                           "About",
+                          style: Styles.headerStyles,
                         ),
                         Wrap(
                           children: <Widget>[
                             Text(
                               "${doctorInfo[widget.id].about}",
                               maxLines: _showMoreAbout ? null : 1,
+                              style: Styles.smallHit,
                             ),
                             FlatButton(
                               child: Text(
-                                  _showMoreAbout ? "See Less" : "See More",
-                                  style: Theme.of(context).textTheme.button),
+                                _showMoreAbout ? "See Less" : "See More",
+                                style: Styles.smallHit,
+                              ),
                               onPressed: () {
                                 setState(() {
                                   _showMoreAbout = !_showMoreAbout;
@@ -161,16 +166,23 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         ),
                         const Text(
                           "Working Hours",
+                          style: Styles.smallHit,
                         ),
                         Row(
                           children: <Widget>[
-                            Text("${doctorInfo[widget.id].workingHours}"),
+                            Text(
+                              "${doctorInfo[widget.id].workingHours}",
+                              style: Styles.smallHit,
+                            ),
                             const SizedBox(width: 15),
                             GestureDetector(
                               onTap: () {},
                               child: Container(
                                 padding: const EdgeInsets.all(9.0),
-                                child: const Text("Open"),
+                                child: const Text(
+                                  "Open",
+                                  style: Styles.smallHit,
+                                ),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5.0),
                                   color: const Color(0xffdbf3e8),
@@ -181,7 +193,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         ),
                         const SizedBox(height: 15),
                         const Text(
-                          "Stats",
+                          "Stats", style: Styles.smallHit,
                           // style: Theme.of(context).textTheme.subtitle,
                         ),
                         const SizedBox(height: 11),
@@ -192,11 +204,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
                               children: <Widget>[
                                 Text(
                                   "${doctorInfo[widget.id].patientsCount}",
+                                  style: Styles.smallHit,
                                 ),
                                 // style: Theme.of(context).textTheme.title),
                                 const Text(
                                   "Patients",
-                                  style: const TextStyle(color: Colors.grey),
+                                  style: Styles.smallHit,
                                 )
                               ],
                             ),
@@ -204,10 +217,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
                               children: <Widget>[
                                 Text(
                                   "${doctorInfo[widget.id].experience} Years",
+                                  style: Styles.smallHit,
                                 ),
                                 const Text(
                                   "Experience",
-                                  style: const TextStyle(color: Colors.grey),
+                                  style: Styles.smallHit,
                                 )
                               ],
                             ),
@@ -215,10 +229,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
                               children: <Widget>[
                                 Text(
                                   "${doctorInfo[widget.id].certifications}",
+                                  style: Styles.smallHit,
                                 ),
                                 const Text(
                                   "Certifications",
-                                  style: TextStyle(color: Colors.grey),
+                                  style: Styles.smallHit,
                                 )
                               ],
                             )
@@ -231,10 +246,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25.0),
                             ),
-                            color: MyColors.blue,
-                            child: Text(
+                            color: Colors.yellow,
+                            child: const Text(
                               "Make An Appointement",
-                              style: Theme.of(context).textTheme.button,
+                              style: Styles.headerStyles,
                             ),
                             onPressed: () {
                               Navigator.push(
