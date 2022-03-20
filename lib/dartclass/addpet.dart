@@ -281,12 +281,12 @@ class _addpetState extends State<addpet> {
                     onPressed: () {
                       _petdetailsAdded(
                           context,
-                          _myControllerpetowner.text,
                           _myController1Petname.text,
                           _myControllerPetAge.text,
                           _myControllerpetloc.text,
                           _myControllerpetBreed.text,
-                          _myControllerpetNumber.text);
+                          _myControllerpetNumber.text,
+                          _myControllerpetowner.text);
                     },
                     child: Text(HOME.addPetDetails),
                   ),
