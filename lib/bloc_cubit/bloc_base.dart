@@ -12,7 +12,7 @@ class bloc_base extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Todays News",
+      title: "Today news",
       home: BlocProvider(
         create: (context) => TodocubitCubit(TodoRepositoryImpl()),
         child: const NewsHeaderView(),

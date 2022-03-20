@@ -33,12 +33,12 @@ class NewsHeaderView extends StatelessWidget {
             return showLoader();
           } else if (state is TodoLoaded) {
             return ListView.builder(
-              itemCount: state.data.rows?.length ?? 0,
+              itemCount: state.data.articles?.length ?? 0,
               itemBuilder: (BuildContext context, int index) {
                 return Card(
                     child: ListTile(
                   leading: CachedNetworkImage(
-                    imageUrl: state.data.rows![index].imageHref ?? "",
+                    imageUrl: state.data.articles![index].urlToImage ?? "",
                     progressIndicatorBuilder:
                         (context, url, downloadProgress) =>
                             CircularProgressIndicator(
@@ -47,11 +47,11 @@ class NewsHeaderView extends StatelessWidget {
                         const Icon(Icons.error),
                   ),
                   title: Text(
-                    state.data.rows![index].title ?? "",
+                    state.data.articles![index].title ?? "",
                     style: Styles.headerStyles,
                   ),
                   subtitle: Text(
-                    state.data.rows![index].description ?? "",
+                    state.data.articles![index].description ?? "\n",
                     style: Styles.headerStyles,
                   ),
                 ));

@@ -121,8 +121,12 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
             arguments: {'type': Menu.detailpage});
         break;
       case Menu.appointmentHistory:
-        Navigator.pushNamed(context, '/bloc_base',
+        Navigator.pushNamed(context, '/appointmenthistory',
             arguments: {'type': Menu.appointmentHistory});
+        break;
+      case Menu.livenewsreport:
+        Navigator.pushNamed(context, '/bloc_base',
+            arguments: {'type': Menu.livenewsreport});
         break;
       case Menu.addPet:
         Navigator.pushNamed(context, '/addpet',

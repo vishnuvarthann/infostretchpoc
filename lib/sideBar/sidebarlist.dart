@@ -41,8 +41,10 @@ class SidebarList extends StatelessWidget {
             ),
             _createOption('Appointment', Icons.meeting_room, Menu.appointment),
             const Divider(),
-            _createOption(
-                'Canada News', Icons.newspaper, Menu.appointmentHistory),
+            _createOption('AppointmentHistory', Icons.meeting_room,
+                Menu.appointmentHistory),
+            const Divider(),
+            _createOption('Canada News', Icons.newspaper, Menu.livenewsreport),
             const Divider(),
             _createOption('Details Page', Icons.details, Menu.detailpage),
             const Divider(),
@@ -84,7 +86,8 @@ enum Menu {
   detailpage,
   appointment,
   onlinepurchase,
-  appointmentHistory
+  appointmentHistory,
+  livenewsreport
 }
 
 enum Class { feedbackalert }

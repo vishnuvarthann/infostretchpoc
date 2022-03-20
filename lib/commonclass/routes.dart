@@ -12,4 +12,6 @@ class Routes {
   static String onBoardingScreen = "/OnBoardingScreen";
   static String doctorProfile = "/DoctorProfile";
   static String bloc_base = "/bloc_base";
+  static String appointmenthistory = '/appointmenthistory';
+  static String livenewsReport = '/bloc_base';
 }

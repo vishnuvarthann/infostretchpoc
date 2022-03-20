@@ -8,6 +8,7 @@ import 'package:petfitproject/bloc_cubit/newsheaderview.dart';
 import 'package:petfitproject/commonclass/routes.dart';
 import 'package:petfitproject/dartclass/GridHeader.dart';
 import 'package:petfitproject/dartclass/ImageLoader.dart';
+import 'package:petfitproject/dartclass/appointmentHistory.dart';
 import 'package:petfitproject/dartclass/login.dart';
 import 'package:petfitproject/dartclass/peddashboard.dart';
 import 'package:petfitproject/dartclass/addpet.dart';
@@ -38,20 +39,21 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.yellow,
       ),
       routes: {
-        Routes.doctorProfile: (context) => const DoctorProfile(),
         Routes.onBoardingScreen: (context) => OnBoardingScreen(),
+        Routes.livenewsReport: (context) => const bloc_base(),
+        Routes.doctorProfile: (context) => const DoctorProfile(),
         Routes.imageloader: (context) => const ImageLoader(),
         Routes.medicalappointment: (context) => const Medicalapp(),
         Routes.login: (context) => const Login(),
         Routes.pedDetailView: (context) => PedDetailsView(),
         Routes.feedback: (context) => const FeedBack(),
         Routes.pedlandingscreen: (context) => const PedDashBoard(),
-        // Routes.pedlandingscreen: (context) => const AddData(),
+        Routes.appointmenthistory: (context) => const AppointmentHistory(),
         Routes.petdetails: (context) => const petdetails(),
         Routes.addpet: (context) => const addpet(),
         Routes.detailpage: (context) => GridHeader(),
         Routes.sigout: (context) => const Signout(),
-        Routes.bloc_base: (context) => const bloc_base()
+        //Routes.bloc_base: (context) => const bloc_base(),
       },
     );
   }
