@@ -57,17 +57,16 @@ List<DoctorInfo> doctorInfo = [
   ),
 ];
 
-
 List<OnBoardingInstructions> onBoardingInstructions = [
   OnBoardingInstructions(
     "assets/images/onboarding2.png",
     "Call a doctor to visit you",
-    "Let them fall into the great ones, which they are most worthy of?",
+    "Please fix the Appointment to meet with Doctor?",
   ),
   OnBoardingInstructions(
     "assets/images/onboarding3.png",
     "Call a doctor to visit you",
-    "Let them fall into the great ones, which they are most worthy of?",
+    "Please fix the Appointment to meet with Doctor?",
   ),
 ];
 

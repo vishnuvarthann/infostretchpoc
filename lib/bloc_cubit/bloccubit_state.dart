@@ -1,7 +1,6 @@
 // ignore: file_names
 
 import 'package:equatable/equatable.dart';
-import 'package:petfitproject/pojoClass/CountriesResponse.dart';
 import 'package:petfitproject/pojoClass/newsApi.dart';
 
 abstract class TodocubitState extends Equatable {

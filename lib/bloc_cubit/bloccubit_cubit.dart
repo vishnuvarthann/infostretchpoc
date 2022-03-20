@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:petfitproject/bloc_cubit/bloccubit_state.dart';
 import 'package:petfitproject/bloc_cubit/blocrepositoryImpl.dart';
-import 'package:petfitproject/pojoClass/CountriesResponse.dart';
 import 'package:petfitproject/pojoClass/newsApi.dart';
 
 class TodocubitCubit extends Cubit<TodocubitState> {

@@ -4,7 +4,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:petfitproject/bloc_cubit/bloc_base.dart';
 import 'package:petfitproject/bloc_cubit/bloc_observer.dart';
-import 'package:petfitproject/bloc_cubit/newsheaderview.dart';
 import 'package:petfitproject/commonclass/routes.dart';
 import 'package:petfitproject/dartclass/GridHeader.dart';
 import 'package:petfitproject/dartclass/ImageLoader.dart';
@@ -87,7 +86,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.yellow,
       body: Center(
-        child: Image.asset('assets/images/splashImages.png'),
+        child: Image.asset('assets/images/petfitlogo.png'),
       ),
     );
   }

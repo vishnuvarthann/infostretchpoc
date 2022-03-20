@@ -1,5 +1,4 @@
 import 'package:petfitproject/bloc_cubit/service.dart';
-import 'package:petfitproject/pojoClass/CountriesResponse.dart';
 import 'package:petfitproject/pojoClass/newsApi.dart';
 
 class TodoRepositoryImpl implements TodoRepository {

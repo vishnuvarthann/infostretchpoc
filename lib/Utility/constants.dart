@@ -27,6 +27,7 @@ class HOME {
   static String send = "Send";
   static String addPetImage = "Add Pet'sPhoto/Video";
   static String addPet = "AddPet";
+  static String addPetDetails = "AddPet Details";
 }
 
 class NavigationDrawerhint {
@@ -60,6 +61,7 @@ class LoginString {
   static String petDob = "petAge:";
   static String PetLocation = "Pet Location:";
   static String petBreed = "Pet Breed";
+  static String petNo = "Phone Number";
   static String ownerContact = "PedID:";
   static String ownerDetails = "Owner Details:";
   static String album = "Album";

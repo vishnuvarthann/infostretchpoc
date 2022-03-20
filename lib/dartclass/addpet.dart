@@ -1,8 +1,10 @@
 // ignore_for_file: camel_case_types
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:petfitproject/Utility/constants.dart';
+import 'package:petfitproject/commonclass/appstyle.dart';
 import 'package:petfitproject/dartclass/ImageLoader.dart';
 
 class addpet extends StatefulWidget {
@@ -14,10 +16,12 @@ class addpet extends StatefulWidget {
 
 class _addpetState extends State<addpet> {
   TextEditingController textarea = TextEditingController();
-  final _myController1 = TextEditingController(text: '');
-  final _myController2 = TextEditingController(text: '');
-  final _myController3 = TextEditingController(text: '');
-  final _myController4 = TextEditingController(text: '');
+  final _myController1Petname = TextEditingController(text: '');
+  final _myControllerPetAge = TextEditingController(text: '');
+  final _myControllerpetloc = TextEditingController(text: '');
+  final _myControllerpetBreed = TextEditingController(text: '');
+  final _myControllerpetNumber = TextEditingController(text: '');
+  final _myControllerpetowner = TextEditingController(text: '');
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style = ButtonStyle(
@@ -66,7 +70,7 @@ class _addpetState extends State<addpet> {
                   alignment: Alignment.centerLeft,
                   child: TextFormField(
                     key: const Key('PetName'),
-                    controller: _myController1,
+                    controller: _myController1Petname,
                     decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Enter Pet Name',
@@ -94,7 +98,7 @@ class _addpetState extends State<addpet> {
                   alignment: Alignment.centerLeft,
                   child: TextFormField(
                     key: const Key('Pet DOB'),
-                    controller: _myController2,
+                    controller: _myControllerPetAge,
                     decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Date of Birth',
@@ -122,7 +126,7 @@ class _addpetState extends State<addpet> {
                   color: Colors.white,
                   child: TextFormField(
                     key: const Key('PetLocation'),
-                    controller: _myController3,
+                    controller: _myControllerpetloc,
                     decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Enter Pet Location',
@@ -150,10 +154,38 @@ class _addpetState extends State<addpet> {
                   color: Colors.white,
                   child: TextFormField(
                     key: const Key('PetBreed'),
-                    controller: _myController4,
+                    controller: _myControllerpetBreed,
                     decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Enter Pet Breed',
+                    ),
+                  ),
+                ),
+              )
+            ]),
+            const SizedBox(height: 10),
+            Row(children: [
+              Flexible(
+                flex: 1,
+                child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(LoginString.petNo,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                        ))),
+              ),
+              Flexible(
+                flex: 2,
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  color: Colors.white,
+                  child: TextFormField(
+                    key: const Key('PhoneNumber'),
+                    controller: _myControllerpetNumber,
+                    decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Phone number',
                     ),
                   ),
                 ),
@@ -188,12 +220,12 @@ class _addpetState extends State<addpet> {
                 ),
                 child: Center(
                   child: TextField(
-                    controller: textarea,
+                    controller: _myControllerpetowner,
                     keyboardType: TextInputType.multiline,
                     maxLines: 4,
                     decoration: const InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Enter Owner details',
+                      hintText: 'PetOwner details',
                     ),
                   ),
                 )),
@@ -239,6 +271,28 @@ class _addpetState extends State<addpet> {
                 ),
               ),
             ]),
+            Row(children: [
+              Flexible(
+                flex: 1,
+                child: Container(
+                  alignment: Alignment.center,
+                  child: ElevatedButton(
+                    style: style,
+                    onPressed: () {
+                      _petdetailsAdded(
+                          context,
+                          _myControllerpetowner.text,
+                          _myController1Petname.text,
+                          _myControllerPetAge.text,
+                          _myControllerpetloc.text,
+                          _myControllerpetBreed.text,
+                          _myControllerpetNumber.text);
+                    },
+                    child: Text(HOME.addPetDetails),
+                  ),
+                ),
+              ),
+            ]),
           ]),
         )));
   }
@@ -249,4 +303,36 @@ class _addpetState extends State<addpet> {
       MaterialPageRoute(builder: (context) => const ImageLoader()),
     );
   }
+
+  Future<void> _petdetailsAdded(
+      BuildContext context,
+      String textN,
+      String textG,
+      String textL,
+      String textB,
+      String textP,
+      String textowner) async {
+    FirebaseFirestore.instance.collection('petdetails').doc().set({
+      'petname': textN,
+      'petlocation': textL,
+      'petid': "234",
+      'petbreed': textB,
+      'petage': textG,
+      'image':
+          "https://i.postimg.cc/Vvf8wsKj/png-puppy-dog-dog-image-result-for-puppy-dog-png-500.png",
+      'Address': textowner,
+    }, SetOptions(merge: true));
+    showAlertDialog(context);
+  }
+}
+
+showAlertDialog(BuildContext context) {
+  // set up the button
+  Widget okButton = TextButton(
+    child: const Text(
+      "OK",
+      style: Styles.headerStyles,
+    ),
+    onPressed: () {},
+  );
 }
