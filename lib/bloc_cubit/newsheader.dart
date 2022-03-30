@@ -14,7 +14,7 @@ class TodaysNews extends StatelessWidget {
       title: "Todays News",
       home: BlocProvider(
         create: (context) => TodocubitCubit(TodoRepositoryImpl()),
-        child: const NewsHeaderView(),
+        child: NewsHeaderView(),
       ),
     );
   }

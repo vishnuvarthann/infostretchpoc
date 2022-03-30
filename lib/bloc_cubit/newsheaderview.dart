@@ -1,31 +1,41 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:petfitproject/Utility/constants.dart';
+
 import 'package:petfitproject/bloc_cubit/bloccubit_cubit.dart';
 import 'package:petfitproject/bloc_cubit/bloccubit_state.dart';
 import 'package:petfitproject/commonclass/appstyle.dart';
 import 'package:petfitproject/commonclass/colors.dart';
-import 'package:petfitproject/commonclass/dime.dart';
 
 class NewsHeaderView extends StatelessWidget {
-  const NewsHeaderView({Key? key}) : super(key: key);
-
+  NewsHeaderView({Key? key}) : super(key: key);
+  final topAppBar = AppBar(
+    elevation: 0.1,
+    backgroundColor: const Color.fromRGBO(58, 66, 86, 1.0),
+    title: const Text("Live news"),
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.vbackground,
-      appBar: AppBar(
-        backgroundColor: AppColors.vheader,
-        title: Center(
-          child: Text(
-            HOME.appointhistorty,
-            style: TextStyle(
-                color: AppColors.vheaderfont,
-                fontSize: DimensionValue.fontSize16),
-          ),
-        ),
-      ),
+      appBar: topAppBar,
+
+      // appBar: AppBar(
+      //   // leading: IconButton(
+      //   //   icon: const Icon(
+      //   //     Icons.arrow_back,
+      //   //     color: Colors.white,
+      //   //   ),
+      //   //   onPressed: () => Navigator.pop(context),
+      //   // ),
+      //   backgroundColor: AppColors.vheader,
+      //   title: Center(
+      //     child: Text(
+      //       HOME.appointhistorty,
+      //       style: Styles.appheader,
+      //     ),
+      //   ),
+      // ),
       body: Center(child: BlocBuilder<TodocubitCubit, TodocubitState>(
         builder: (context, state) {
           if (state is TodocubitInitial) {

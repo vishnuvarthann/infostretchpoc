@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:petfitproject/Utility/constants.dart';
 import 'package:petfitproject/commonclass/appstyle.dart';
+import 'package:intl/intl.dart';
 
 class PedDetailsView extends StatefulWidget {
   var data;
@@ -14,12 +15,18 @@ class PedDetailsView extends StatefulWidget {
 }
 
 class _PedDetailsViewState extends State<PedDetailsView> {
+  final TextEditingController _dateController = TextEditingController();
   String? docPetname;
   String? docPetLocation;
   String? docPetid;
   String? docPetage;
   String? docpetAddress;
   String? docpetBreed;
+  DateTime selectedDate = DateTime.now();
+  TimeOfDay currentTime = TimeOfDay.now();
+  String timeText = 'Select Time';
+  late String dateUTC;
+  late String date_Time;
 
   @override
   void initState() {
@@ -34,9 +41,9 @@ class _PedDetailsViewState extends State<PedDetailsView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black,
-          title:
-              const Text("Pet Details", style: TextStyle(color: Colors.white)),
+          elevation: 0.1,
+          backgroundColor: const Color.fromRGBO(58, 66, 86, 1.0),
+          title: const Text("Pet Details", style: Styles.appheader),
           leading: IconButton(
             icon: const Icon(
               Icons.arrow_back,
@@ -86,7 +93,7 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                           alignment: Alignment.centerLeft,
                           child: Text(
                             LoginString.petName,
-                            style: Styles.headerStyles,
+                            style: Styles.boldStyles,
                           )),
                     ),
                     Flexible(
@@ -106,8 +113,10 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                       flex: 1,
                       child: Container(
                           alignment: Alignment.centerLeft,
-                          child: Text(LoginString.petDob,
-                              style: Styles.headerStyles)),
+                          child: Text(
+                            LoginString.petDob,
+                            style: Styles.boldStyles,
+                          )),
                     ),
                     Flexible(
                       flex: 2,
@@ -125,7 +134,7 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                           alignment: Alignment.centerLeft,
                           child: Text(
                             LoginString.PetLocation,
-                            style: Styles.headerStyles,
+                            style: Styles.boldStyles,
                           )),
                     ),
                     Flexible(
@@ -147,7 +156,7 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                           alignment: Alignment.centerLeft,
                           child: Text(
                             LoginString.petBreed,
-                            style: Styles.headerStyles,
+                            style: Styles.boldStyles,
                           )),
                     ),
                     Flexible(
@@ -169,7 +178,7 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                           alignment: Alignment.centerLeft,
                           child: Text(
                             LoginString.ownerContact,
-                            style: Styles.headerStyles,
+                            style: Styles.boldStyles,
                           )),
                     ),
                     Flexible(
@@ -192,7 +201,7 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                             alignment: Alignment.centerLeft,
                             child: Text(
                               LoginString.ownerDetails,
-                              style: Styles.headerStyles,
+                              style: Styles.boldStyles,
                             )),
                       ),
                     ],
@@ -227,70 +236,82 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                           alignment: Alignment.centerLeft,
                           child: Text(
                             LoginString.album,
-                            style: Styles.headerStyles,
+                            style: Styles.boldStyles,
+                          )),
+                    ),
+                    Flexible(
+                      flex: 1,
+                      child: Container(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            _dateController.text,
+                            style: Styles.boldStyles,
                           )),
                     ),
                     Flexible(
                       flex: 2,
                       child: Container(
                         alignment: Alignment.centerRight,
-                        child: Image.asset(
-                          'assets/images/album.jpg',
-                          width: 40,
-                          height: 40,
+                        child: IconButton(
+                          icon: const Icon(Icons.date_range_outlined),
+                          onPressed: () {
+                            selectDate(context);
+                          },
                         ),
                       ),
                     )
                   ]),
                   const SizedBox(height: 20),
+                  // Row(children: [
+                  //   Flexible(
+                  //     flex: 1,
+                  //     child: Container(
+                  //         alignment: Alignment.centerLeft,
+                  //         child: Text(
+                  //           LoginString.schedule,
+                  //           style: Styles.boldStyles,
+                  //         )),
+                  //   ),
+                  // Flexible(
+                  //   flex: 1,
+                  //   child: Container(
+                  //     alignment: Alignment.center,
+                  //     child: Image.asset(
+                  //       'assets/images/calender.jpg',
+                  //       width: 40,
+                  //       height: 40,
+                  //     ),
+                  //   ),
+                  // ),
+                  //   Flexible(
+                  //     flex: 1,
+                  //     child: Container(
+                  //       alignment: Alignment.centerRight,
+                  //       child: const Icon(
+                  //         Icons.date_range_outlined,
+                  //         color: Colors.white,
+                  //       ),
+                  //     ),
+                  //   )
+                  // ]),
                   Row(children: [
                     Flexible(
                       flex: 1,
                       child: Container(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            LoginString.schedule,
-                            style: Styles.headerStyles,
-                          )),
-                    ),
-                    Flexible(
-                      flex: 1,
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Image.asset(
-                          'assets/images/calender.jpg',
-                          width: 40,
-                          height: 40,
+                        alignment: Alignment.centerRight,
+                        child: const Text(
+                          "Please select date for Appointment ",
+                          style: Styles.boldStyles,
                         ),
                       ),
                     ),
-                    Flexible(
-                      flex: 1,
-                      child: Container(
-                        alignment: Alignment.centerRight,
-                        child: Image.asset(
-                          'assets/images/views.jpg',
-                          width: 40,
-                          height: 40,
-                        ),
-                      ),
-                    )
-                  ]),
-                  Row(children: [
-                    Flexible(
-                      flex: 1,
-                      child: Container(
-                        alignment: Alignment.centerRight,
-                        child: const Text("Create"),
-                      ),
-                    ),
-                    Flexible(
-                      flex: 1,
-                      child: Container(
-                        alignment: Alignment.centerRight,
-                        child: const Text("View"),
-                      ),
-                    )
+                    // Flexible(
+                    //   flex: 1,
+                    //   child: Container(
+                    //     alignment: Alignment.centerRight,
+                    //     child: const Text("View"),
+                    //   ),
+                    // )
                   ]),
                   const SizedBox(height: 20),
                   Row(children: [
@@ -303,7 +324,10 @@ class _PedDetailsViewState extends State<PedDetailsView> {
                           onPressed: () {
                             _launchCaller(context);
                           },
-                          child: Text(LoginString.call),
+                          child: Text(
+                            LoginString.call,
+                            style: Styles.boldStyles,
+                          ),
                         ),
                       ),
                     ),
@@ -316,5 +340,26 @@ class _PedDetailsViewState extends State<PedDetailsView> {
   _launchCaller(BuildContext context) async {
     const number = '08592119XXXX'; //set the number here
     bool? res = await FlutterPhoneDirectCaller.callNumber(number);
+  }
+
+  Future<void> selectDate(BuildContext context) async {
+    showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime.now().subtract(const Duration(days: 0)),
+      lastDate: DateTime(2025),
+    ).then(
+      (date) {
+        setState(
+          () {
+            selectedDate = date!;
+            String formattedDate =
+                DateFormat('dd-MM-yyyy').format(selectedDate);
+            _dateController.text = formattedDate;
+            // dateUTC = DateFormat('yyyy-MM-dd').format(selectedDate);
+          },
+        );
+      },
+    );
   }
 }

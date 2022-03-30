@@ -44,15 +44,16 @@ class SidebarList extends StatelessWidget {
             _createOption('AppointmentHistory', Icons.meeting_room,
                 Menu.appointmentHistory),
             const Divider(),
-            _createOption('Canada News', Icons.newspaper, Menu.livenewsreport),
-            const Divider(),
-            _createOption('Details Page', Icons.details, Menu.detailpage),
+            _createOption('Live News', Icons.newspaper, Menu.livenewsreport),
             const Divider(),
             _createOption('Add Pet', Icons.art_track, Menu.addPet),
             const Divider(),
             _createOption("FeedBack", Icons.seventeen_mp, Menu.feedback),
             const Divider(),
             _createOption("Logout", Icons.exit_to_app, Menu.signOut),
+            const Divider(color: Colors.black),
+            const SizedBox(height: 20),
+            _createOption("AppVersion 1.0.1", Icons.verified, Menu.appversion),
             const Divider(),
           ],
         ));
@@ -87,7 +88,8 @@ enum Menu {
   appointment,
   onlinepurchase,
   appointmentHistory,
-  livenewsreport
+  livenewsreport,
+  appversion
 }
 
 enum Class { feedbackalert }

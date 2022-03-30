@@ -26,7 +26,9 @@ class _AppointmentHistoryState extends State<AppointmentHistory> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          elevation: 0.1,
+          iconTheme: const IconThemeData(color: Colors.white),
+          backgroundColor: const Color.fromRGBO(58, 66, 86, 1.0),
           title: const Text("AppointmentHistory ",
               style: TextStyle(color: Colors.white)),
           leading: IconButton(

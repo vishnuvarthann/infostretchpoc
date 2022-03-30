@@ -40,8 +40,7 @@ class OnBoardingScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Flexible(
-                        child:
-                            Image.asset("${onBoardingInstructions[i].image}"),
+                        child: Image.asset(onBoardingInstructions[i].image),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -63,13 +62,13 @@ class OnBoardingScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 11.0),
                       Text(
-                        "${onBoardingInstructions[i].title}",
+                        onBoardingInstructions[i].title,
                         textAlign: TextAlign.center,
                         style: Styles.headerStyles,
                       ),
                       const SizedBox(height: 5.0),
                       Text(
-                        "${onBoardingInstructions[i].subtitle}",
+                        onBoardingInstructions[i].subtitle,
                         textAlign: TextAlign.center,
                         style: Styles.boldStyles,
                       )

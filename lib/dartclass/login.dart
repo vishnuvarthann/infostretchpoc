@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:petfitproject/Utility/constants.dart';
@@ -25,19 +27,45 @@ class _State extends State<Login> {
   bool _rememberMeFlag = false;
 
   @override
-  void initState() {}
+  void initState() {
+    print("initstate");
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print("didChangeDependencies");
+  }
+
+  @override
+  void didUpdateWidget(oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    print("didUpdateWidget");
+  }
+
+  @override
+  void deactivate() {
+    super.deactivate();
+    print("deactivate");
+  }
+
+  @override
+  dispose() {
+    super.dispose();
+    print("dispose");
+  }
 
   @override
   Widget build(BuildContext context) {
+    print("build");
     return Scaffold(
       backgroundColor: AppColors.vheaderfont,
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text(HOME.loginPet,
-            style: const TextStyle(
-                fontFamily: FontFamily.robotoMono,
-                fontWeight: FontWeight.bold)),
-        backgroundColor: Colors.yellow,
+        elevation: 0.1,
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: const Color.fromRGBO(58, 66, 86, 1.0),
+        title: Text(HOME.loginPet, style: Styles.appheader),
       ),
       body: Center(
           child: SingleChildScrollView(
@@ -133,7 +161,7 @@ class _State extends State<Login> {
               child: ElevatedButton(
                 child: Text(
                   HOME.loginPet,
-                  style: const TextStyle(fontSize: 16.0, color: Colors.black),
+                  style: Styles.boldStyles,
                 ),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
@@ -175,7 +203,7 @@ class _State extends State<Login> {
                       ),
                       const Text(
                         "Remember me",
-                        style: TextStyle(color: Colors.black, fontSize: 16),
+                        style: Styles.boldStyles,
                       ),
                     ],
                   ),

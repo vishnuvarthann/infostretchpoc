@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:petfitproject/commonclass/appstyle.dart';
 import 'package:petfitproject/sideBar/sidebarlist.dart';
 
 class Signout extends StatelessWidget {
@@ -45,6 +46,18 @@ class Signout extends StatelessWidget {
         });
     return SafeArea(
         child: Scaffold(
+      appBar: AppBar(
+        elevation: 0.1,
+        backgroundColor: const Color.fromRGBO(58, 66, 86, 1.0),
+        title: const Text("Pet Details", style: Styles.appheader),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       body: Center(
         child: ListView(
           shrinkWrap: true,

@@ -59,7 +59,8 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
       ),
       appBar: widget.neeAppBar
           ? AppBar(
-              backgroundColor: Colors.black,
+              elevation: 0.1,
+              backgroundColor: const Color.fromRGBO(58, 66, 86, 1.0),
               iconTheme: const IconThemeData(color: Colors.white),
               title: const Text(
                 BottomNav.title,
@@ -76,7 +77,10 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               actions: const [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
-                  child: Icon(Icons.language_outlined),
+                  child: Icon(
+                    Icons.notification_add,
+                    color: Colors.yellow,
+                  ),
                 ),
               ],
             )
@@ -84,7 +88,8 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.black,
+        elevation: 0.1,
+        backgroundColor: const Color.fromRGBO(58, 66, 86, 1.0),
         selectedItemColor: Colors.redAccent,
         unselectedItemColor: Colors.white.withOpacity(.60),
         selectedFontSize: 14,

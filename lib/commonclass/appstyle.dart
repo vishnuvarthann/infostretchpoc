@@ -18,10 +18,16 @@ class Styles {
   static const TextStyle boldStyles = TextStyle(
     fontFamily: FontFamily.robotoMono,
     color: Colors.black,
-    fontWeight: FontWeight.w500,
-    fontSize: 20.0,
+    fontWeight: FontWeight.w800,
+    fontSize: 18.0,
   );
 
+  static const TextStyle appheader = TextStyle(
+    fontFamily: FontFamily.robotoMono,
+    color: Colors.white,
+    fontWeight: FontWeight.w800,
+    fontSize: 21.0,
+  );
   static const TextStyle buttonStyles = TextStyle(
     fontFamily: FontFamily.robotoMono,
     fontWeight: FontWeight.w500,

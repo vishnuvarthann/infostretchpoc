@@ -16,7 +16,7 @@ class HOME {
   static String title = "Welcome to PetFit";
   static String loginMessage = "Sign In As:";
   static String loginPetA = "Fix Appointmnet ";
-  static String appointhistorty = "Canada News Live";
+  static String appointhistorty = " News Live";
   static String loginPet = " Login ";
   static String detailspage = "Detail Pages";
   static String feedbackhint = "Welcome New User";

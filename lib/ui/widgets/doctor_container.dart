@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
 import 'package:petfitproject/commonclass/appstyle.dart';
 import 'package:petfitproject/ui/global.dart';
 import 'package:petfitproject/ui/screens/details.dart';
@@ -45,7 +44,7 @@ class DoctorContainer extends StatelessWidget {
                     style: Styles.headerStyles,
                   ),
                   Text(
-                    "${doctorInfo[id].type}",
+                    doctorInfo[id].type,
                     style: Styles.headerStyles,
                   ),
                   Row(

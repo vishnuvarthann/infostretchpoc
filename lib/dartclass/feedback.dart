@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:petfitproject/Utility/constants.dart';
+import 'package:petfitproject/commonclass/appstyle.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class FeedBack extends StatefulWidget {
@@ -34,7 +35,10 @@ class _FeedBackState extends State<FeedBack> {
         ),
         home: Scaffold(
           appBar: AppBar(
-            title: const Text('FeedBack'),
+            elevation: 0.1,
+            iconTheme: const IconThemeData(color: Colors.white),
+            backgroundColor: const Color.fromRGBO(58, 66, 86, 1.0),
+            title: const Text('FeedBack', style: Styles.appheader),
             leading: IconButton(
               icon: const Icon(Icons.arrow_back),
               onPressed: () => Navigator.pop(context),

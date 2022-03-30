@@ -5,8 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:petfitproject/commonclass/appstyle.dart';
 
-import 'package:petfitproject/ui/widgets/doctorProfile.dart';
-
 class BookingScreen extends StatefulWidget {
   const BookingScreen({Key? key}) : super(key: key);
 
@@ -47,7 +45,7 @@ class _BookingScreenState extends State<BookingScreen> {
     showDatePicker(
       context: context,
       initialDate: DateTime.now(),
-      firstDate: DateTime(2021),
+      firstDate: DateTime.now().subtract(const Duration(days: 0)),
       lastDate: DateTime(2025),
     ).then(
       (date) {
@@ -90,14 +88,7 @@ class _BookingScreenState extends State<BookingScreen> {
         "OK",
         style: Styles.headerStyles,
       ),
-      onPressed: () {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const DoctorProfile(),
-          ),
-        );
-      },
+      onPressed: () {},
     );
 
     // set up the AlertDialog
@@ -482,7 +473,7 @@ class _BookingScreenState extends State<BookingScreen> {
                               print("widget.doctor");
 
                               _createAppointment();
-                              //showAlertDialog(context);
+                              showAlertDialog(context);
                             }
                           },
                           child: Text(

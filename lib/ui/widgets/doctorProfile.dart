@@ -42,7 +42,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
             }
             return NotificationListener<OverscrollIndicatorNotification>(
               onNotification: (OverscrollIndicatorNotification overscroll) {
-                overscroll.disallowGlow();
+                overscroll.disallowIndicator();
                 return true;
               },
               child: ListView.builder(
@@ -147,7 +147,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                               const SizedBox(
                                 width: 20,
                               ),
-                              Container(
+                              SizedBox(
                                 width: MediaQuery.of(context).size.width / 1.4,
                                 child: Text(
                                   document['address'],

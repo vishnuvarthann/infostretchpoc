@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:petfitproject/Utility/constants.dart';
 import 'package:petfitproject/commonclass/appstyle.dart';
-import 'package:petfitproject/dartclass/ImageLoader.dart';
+import 'package:petfitproject/dartclass/ImageFromGalleryEx.dart';
 
 class addpet extends StatefulWidget {
   const addpet({Key? key}) : super(key: key);
@@ -25,14 +25,17 @@ class _addpetState extends State<addpet> {
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style = ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Colors.white),
+        backgroundColor: MaterialStateProperty.all(Colors.yellow),
         padding:
             MaterialStateProperty.all(const EdgeInsets.fromLTRB(20, 0, 20, 0)),
         textStyle: MaterialStateProperty.all(const TextStyle(fontSize: 25)));
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Add Pet", style: TextStyle(color: Colors.white)),
+          elevation: 0.1,
+          iconTheme: const IconThemeData(color: Colors.white),
+          backgroundColor: const Color.fromRGBO(58, 66, 86, 1.0),
+          title: const Text("Add Pet", style: Styles.appheader),
           leading: IconButton(
             icon: const Icon(
               Icons.arrow_back,
@@ -40,7 +43,6 @@ class _addpetState extends State<addpet> {
             ),
             onPressed: () => Navigator.pop(context),
           ),
-          backgroundColor: Colors.black54,
         ),
         body: SingleChildScrollView(
             child: Container(
@@ -57,11 +59,7 @@ class _addpetState extends State<addpet> {
                 flex: 1,
                 child: Container(
                     alignment: Alignment.centerLeft,
-                    child: Text(LoginString.petName,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ))),
+                    child: Text(LoginString.petName, style: Styles.boldStyles)),
               ),
               Flexible(
                 flex: 2,
@@ -71,6 +69,7 @@ class _addpetState extends State<addpet> {
                   child: TextFormField(
                     key: const Key('PetName'),
                     controller: _myController1Petname,
+                    style: Styles.headerStyles,
                     decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Enter Pet Name',
@@ -85,11 +84,7 @@ class _addpetState extends State<addpet> {
                 flex: 1,
                 child: Container(
                     alignment: Alignment.centerLeft,
-                    child: Text(LoginString.petDob,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ))),
+                    child: Text(LoginString.petDob, style: Styles.boldStyles)),
               ),
               Flexible(
                 flex: 2,
@@ -99,6 +94,7 @@ class _addpetState extends State<addpet> {
                   child: TextFormField(
                     key: const Key('Pet DOB'),
                     controller: _myControllerPetAge,
+                    style: Styles.headerStyles,
                     decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Date of Birth',
@@ -114,10 +110,7 @@ class _addpetState extends State<addpet> {
                 child: Container(
                     alignment: Alignment.centerLeft,
                     child: Text(LoginString.PetLocation,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ))),
+                        style: Styles.boldStyles)),
               ),
               Flexible(
                 flex: 2,
@@ -127,6 +120,7 @@ class _addpetState extends State<addpet> {
                   child: TextFormField(
                     key: const Key('PetLocation'),
                     controller: _myControllerpetloc,
+                    style: Styles.headerStyles,
                     decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Enter Pet Location',
@@ -141,11 +135,8 @@ class _addpetState extends State<addpet> {
                 flex: 1,
                 child: Container(
                     alignment: Alignment.centerLeft,
-                    child: Text(LoginString.petBreed,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ))),
+                    child:
+                        Text(LoginString.petBreed, style: Styles.boldStyles)),
               ),
               Flexible(
                 flex: 2,
@@ -155,6 +146,7 @@ class _addpetState extends State<addpet> {
                   child: TextFormField(
                     key: const Key('PetBreed'),
                     controller: _myControllerpetBreed,
+                    style: Styles.headerStyles,
                     decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Enter Pet Breed',
@@ -169,11 +161,7 @@ class _addpetState extends State<addpet> {
                 flex: 1,
                 child: Container(
                     alignment: Alignment.centerLeft,
-                    child: Text(LoginString.petNo,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ))),
+                    child: Text(LoginString.petNo, style: Styles.boldStyles)),
               ),
               Flexible(
                 flex: 2,
@@ -183,6 +171,7 @@ class _addpetState extends State<addpet> {
                   child: TextFormField(
                     key: const Key('PhoneNumber'),
                     controller: _myControllerpetNumber,
+                    style: Styles.headerStyles,
                     decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Phone number',
@@ -199,10 +188,7 @@ class _addpetState extends State<addpet> {
                   child: Container(
                       alignment: Alignment.centerLeft,
                       child: Text(LoginString.ownerDetails,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18.0,
-                          ))),
+                          style: Styles.boldStyles)),
                 ),
               ],
             ),
@@ -221,6 +207,7 @@ class _addpetState extends State<addpet> {
                 child: Center(
                   child: TextField(
                     controller: _myControllerpetowner,
+                    style: Styles.headerStyles,
                     keyboardType: TextInputType.multiline,
                     maxLines: 4,
                     decoration: const InputDecoration(
@@ -235,11 +222,7 @@ class _addpetState extends State<addpet> {
                 flex: 2,
                 child: Container(
                     alignment: Alignment.centerLeft,
-                    child: Text(HOME.addPetImage,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ))),
+                    child: Text(HOME.addPetImage, style: Styles.boldStyles)),
               ),
               Flexible(
                 flex: 1,
@@ -266,7 +249,10 @@ class _addpetState extends State<addpet> {
                     onPressed: () {
                       _toggleFavorite(context);
                     },
-                    child: Text(HOME.addPet),
+                    child: Text(
+                      HOME.addPet,
+                      style: Styles.boldStyles,
+                    ),
                   ),
                 ),
               ),
@@ -279,16 +265,28 @@ class _addpetState extends State<addpet> {
                   child: ElevatedButton(
                     style: style,
                     onPressed: () {
-                      _petdetailsAdded(
-                          context,
-                          _myController1Petname.text,
-                          _myControllerPetAge.text,
-                          _myControllerpetloc.text,
-                          _myControllerpetBreed.text,
-                          _myControllerpetNumber.text,
-                          _myControllerpetowner.text);
+                      if (_myController1Petname.text == '' ||
+                          _myControllerPetAge.text == '' ||
+                          _myControllerpetloc.text == '' ||
+                          _myControllerpetBreed.text == '' ||
+                          _myControllerpetNumber.text == '' ||
+                          _myControllerpetowner.text == '') {
+                        showAlertDialog(context);
+                      } else {
+                        _petdetailsAdded(
+                            context,
+                            _myController1Petname.text,
+                            _myControllerPetAge.text,
+                            _myControllerpetloc.text,
+                            _myControllerpetBreed.text,
+                            _myControllerpetNumber.text,
+                            _myControllerpetowner.text);
+                      }
                     },
-                    child: Text(HOME.addPetDetails),
+                    child: Text(
+                      HOME.addPetDetails,
+                      style: Styles.boldStyles,
+                    ),
                   ),
                 ),
               ),
@@ -300,18 +298,19 @@ class _addpetState extends State<addpet> {
   void _toggleFavorite(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const ImageLoader()),
+      MaterialPageRoute(
+          builder: (context) => const ImageFromGalleryEx("Image from Gallery")),
     );
   }
 
   Future<void> _petdetailsAdded(
       BuildContext context,
-      String textN,
-      String textG,
-      String textL,
-      String textB,
-      String textP,
-      String textowner) async {
+      String? textN,
+      String? textG,
+      String? textL,
+      String? textB,
+      String? textP,
+      String? textowner) async {
     FirebaseFirestore.instance.collection('petdetails').doc().set({
       'petname': textN,
       'petlocation': textL,
@@ -323,6 +322,16 @@ class _addpetState extends State<addpet> {
       'Address': textowner,
     }, SetOptions(merge: true));
     showAlertDialog(context);
+  }
+
+  showAlertDialog(BuildContext context) {
+    Widget okButton = TextButton(
+      child: const Text(
+        "PLease fill the empty text",
+        style: Styles.headerStyles,
+      ),
+      onPressed: () {},
+    );
   }
 }
 

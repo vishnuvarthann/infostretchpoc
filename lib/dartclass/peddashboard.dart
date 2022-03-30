@@ -24,8 +24,39 @@ class _PedDashBoardState extends State<PedDashBoard> {
     'assets/images/png-puppy-dog-dog-png-image-246.png',
     'assets/images/png-puppy-dog-rottweiler-puppy-dog-nature-hundeportrait-isolated-552.png',
   ];
+
+  @override
+  void initState() {
+    print("initstate");
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print("didChangeDependencies");
+  }
+
+  @override
+  void didUpdateWidget(oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    print("didUpdateWidget");
+  }
+
+  @override
+  void deactivate() {
+    super.deactivate();
+    print("deactivate");
+  }
+
+  @override
+  dispose() {
+    super.dispose();
+    print("dispose");
+  }
+
   @override
   Widget build(BuildContext context) {
+    print("build");
     return SingleChildScrollView(
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -121,6 +152,7 @@ getHomePageBody(BuildContext context) {
                         "petID :" +
                         doc['petid'],
                     style: Styles.headerStyles),
+
                 // subtitle: Text("Pet location :" + doc['petlocation'],
                 //     style: Styles.headerStyles),
                 onTap: () {
